@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EC205700C700A58172 /* AppDelegate.swift */; };
-		B660E8EF205700C700A58172 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EE205700C700A58172 /* ViewController.swift */; };
+		B660E8EF205700C700A58172 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EE205700C700A58172 /* HomeView.swift */; };
 		B660E8F2205700C700A58172 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F0205700C700A58172 /* Main.storyboard */; };
 		B660E8F5205700C700A58172 /* MultiEduca.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B660E8F3205700C700A58172 /* MultiEduca.xcdatamodeld */; };
 		B660E8F7205700C700A58172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F6205700C700A58172 /* Assets.xcassets */; };
 		B660E8FA205700C700A58172 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F8205700C700A58172 /* LaunchScreen.storyboard */; };
 		B660E905205700C700A58172 /* MultiEducaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E904205700C700A58172 /* MultiEducaTests.swift */; };
+		B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F0205DA30800F551DC /* HomePresenter.swift */; };
+		B6FA65F3205DA32B00F551DC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F2205DA32B00F551DC /* HomeRouter.swift */; };
+		B6FA65F5205DA34500F551DC /* HomeContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F4205DA34500F551DC /* HomeContracts.swift */; };
+		B6FA65F8205DAD2600F551DC /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */; };
+		B6FA65FA205DB05B00F551DC /* ModulesContractBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F9205DB05B00F551DC /* ModulesContractBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +34,7 @@
 /* Begin PBXFileReference section */
 		B660E8E9205700C700A58172 /* MultiEduca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiEduca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B660E8EC205700C700A58172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B660E8EE205700C700A58172 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B660E8EE205700C700A58172 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B660E8F1205700C700A58172 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B660E8F4205700C700A58172 /* MultiEduca.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MultiEduca.xcdatamodel; sourceTree = "<group>"; };
 		B660E8F6205700C700A58172 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +43,11 @@
 		B660E900205700C700A58172 /* MultiEducaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiEducaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B660E904205700C700A58172 /* MultiEducaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiEducaTests.swift; sourceTree = "<group>"; };
 		B660E906205700C700A58172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6FA65F0205DA30800F551DC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		B6FA65F2205DA32B00F551DC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		B6FA65F4205DA34500F551DC /* HomeContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContracts.swift; sourceTree = "<group>"; };
+		B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
+		B6FA65F9205DB05B00F551DC /* ModulesContractBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesContractBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				B660E8EC205700C700A58172 /* AppDelegate.swift */,
-				B660E8EE205700C700A58172 /* ViewController.swift */,
+				B6FA65F6205DA9ED00F551DC /* Core */,
+				B6FA65ED205DA0B100F551DC /* Modules */,
 				B660E8F0205700C700A58172 /* Main.storyboard */,
 				B660E8F6205700C700A58172 /* Assets.xcassets */,
 				B660E8F8205700C700A58172 /* LaunchScreen.storyboard */,
@@ -97,6 +108,34 @@
 				B660E906205700C700A58172 /* Info.plist */,
 			);
 			path = MultiEducaTests;
+			sourceTree = "<group>";
+		};
+		B6FA65EC205D9FEA00F551DC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B6FA65F4205DA34500F551DC /* HomeContracts.swift */,
+				B660E8EE205700C700A58172 /* HomeView.swift */,
+				B6FA65F0205DA30800F551DC /* HomePresenter.swift */,
+				B6FA65F2205DA32B00F551DC /* HomeRouter.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B6FA65ED205DA0B100F551DC /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B6FA65EC205D9FEA00F551DC /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B6FA65F6205DA9ED00F551DC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */,
+				B6FA65F9205DB05B00F551DC /* ModulesContractBase.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,9 +241,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B660E8EF205700C700A58172 /* ViewController.swift in Sources */,
+				B6FA65F5205DA34500F551DC /* HomeContracts.swift in Sources */,
+				B660E8EF205700C700A58172 /* HomeView.swift in Sources */,
 				B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */,
 				B660E8F5205700C700A58172 /* MultiEduca.xcdatamodeld in Sources */,
+				B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */,
+				B6FA65F8205DAD2600F551DC /* DependencyFactory.swift in Sources */,
+				B6FA65FA205DB05B00F551DC /* ModulesContractBase.swift in Sources */,
+				B6FA65F3205DA32B00F551DC /* HomeRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
