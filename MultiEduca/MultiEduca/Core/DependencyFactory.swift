@@ -11,15 +11,13 @@ import Foundation
 
 enum ModuleType {
     case HOME_TYPE
+    case LEVELS_TYPE
 }
 
 
 class DependencyFactory {
     
-    static func moduleDependencies(moduleType:ModuleType, view:ViewContractBase) -> PresenterContractBase
-    {
-        //var presenter:PresenterContractBase? = nil
-    
+    static func moduleDependencies(moduleType:ModuleType, view:ViewContractBase) -> PresenterContractBase?{
         switch moduleType {
         case .HOME_TYPE:
             var presenter:HomePresenterContract {
@@ -27,10 +25,13 @@ class DependencyFactory {
                 return HomePresenter(view: view as! HomeViewContract, router: router)
             }
             return presenter
-        default:
-            break
+        case .LEVELS_TYPE:
+            var presenter:LevelsPresenterContract {
+                let router:LevelsRouterContract = LevelsRouter(view: self as! LevelsViewContract)
+                return LevelsPresenter(view: self as! LevelsViewContract, router: router)
+            }
+            return presenter
         }
-        //return presenter!
     }
     
 }

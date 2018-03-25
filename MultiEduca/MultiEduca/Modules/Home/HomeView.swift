@@ -8,23 +8,24 @@
 
 import UIKit
 
+
 class HomeView: UIViewController {
 
-    var presenter = DependencyFactory.moduleDependencies(moduleType: .HOME_TYPE, view: self as! HomeViewContract) as! HomePresenterContract
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // TODO: usar generic para el tipo de protocolo o clase de la vista
+    let presenter = DependencyFactory.moduleDependencies(moduleType: .HOME_TYPE, view: self as! HomeViewContract)
         
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLoad()
+    {
+        super.viewDidLoad() 
     }
 
 }
 
 
-extension HomeView:HomeViewContract {
+extension HomeView: HomeViewContract {
     
+
 }
+
+
+
