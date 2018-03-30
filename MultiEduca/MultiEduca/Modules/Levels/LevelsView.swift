@@ -9,12 +9,12 @@
 import UIKit
 
 
-class LevelsView: UIViewController {
+class LevelsView: BaseViewController<LevelsPresenter> {
     
-    let presenter = DependencyFactory.moduleDependencies(moduleType: .LEVELS_TYPE, view: self as! LevelsViewContract)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter.start()
     }
 
 }

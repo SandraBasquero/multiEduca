@@ -10,11 +10,11 @@ import Foundation
 
 
 protocol HomeViewContract:ViewContractBase {
-    
+
 }
 
 protocol HomePresenterContract:PresenterContractBase {
-    func start()
+    
 }
 
 

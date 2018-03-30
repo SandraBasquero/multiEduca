@@ -10,9 +10,10 @@ import Foundation
 
 
 protocol ViewContractBase {
-    
+
 }
 
 protocol PresenterContractBase {
-    
+    func start()
 }
+

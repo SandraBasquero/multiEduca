@@ -9,23 +9,16 @@
 import UIKit
 
 
-class HomeView: UIViewController {
+class HomeView: BaseViewController<HomePresenter> {
 
-    // TODO: usar generic para el tipo de protocolo o clase de la vista
-    let presenter = DependencyFactory.moduleDependencies(moduleType: .HOME_TYPE, view: self as! HomeViewContract)
-        
     override func viewDidLoad()
     {
-        super.viewDidLoad() 
+        super.viewDidLoad()
+        self.presenter.start()
     }
-
 }
 
 
 extension HomeView: HomeViewContract {
     
-
 }
-
-
-

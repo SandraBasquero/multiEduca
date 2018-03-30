@@ -22,7 +22,7 @@ class HomePresenter: HomePresenterContract {
     
     func start()
     {
-        
+        print("Testiiiing Home")
     }
     
 }

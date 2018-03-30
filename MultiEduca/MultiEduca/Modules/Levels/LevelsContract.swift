@@ -13,7 +13,6 @@ protocol LevelsViewContract:ViewContractBase {
 }
 
 protocol LevelsPresenterContract:PresenterContractBase {
-    func start()
 }
 
 
