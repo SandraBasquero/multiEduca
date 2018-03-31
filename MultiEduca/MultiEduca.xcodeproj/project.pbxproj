@@ -13,6 +13,14 @@
 		B63668AD20681F3E00835547 /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63668AC20681F3E00835547 /* LevelsView.swift */; };
 		B63668AF2068236A00835547 /* LevelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63668AE2068236A00835547 /* LevelsPresenter.swift */; };
 		B63668B12068237B00835547 /* LevelsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63668B02068237B00835547 /* LevelsRouter.swift */; };
+		B6377049206F765400DB2A73 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6377047206F765400DB2A73 /* SectionCell.swift */; };
+		B637704A206F765400DB2A73 /* SectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6377048206F765400DB2A73 /* SectionCell.xib */; };
+		B637704D206F7B0900DB2A73 /* SectionCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637704C206F7B0900DB2A73 /* SectionCellViewModel.swift */; };
+		B637704F206F7D3F00DB2A73 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637704E206F7D3F00DB2A73 /* HomeInteractor.swift */; };
+		B6377052206F7DED00DB2A73 /* FilesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6377051206F7DED00DB2A73 /* FilesManager.swift */; };
+		B6377055206F7E2C00DB2A73 /* FilesManagerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6377054206F7E2C00DB2A73 /* FilesManagerContract.swift */; };
+		B6377057206F806300DB2A73 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6377056206F806300DB2A73 /* Provider.swift */; };
+		B637705B206F80D600DB2A73 /* ProviderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637705A206F80D600DB2A73 /* ProviderContract.swift */; };
 		B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EC205700C700A58172 /* AppDelegate.swift */; };
 		B660E8EF205700C700A58172 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EE205700C700A58172 /* HomeView.swift */; };
 		B660E8F2205700C700A58172 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F0205700C700A58172 /* Main.storyboard */; };
@@ -44,6 +52,14 @@
 		B63668AC20681F3E00835547 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
 		B63668AE2068236A00835547 /* LevelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsPresenter.swift; sourceTree = "<group>"; };
 		B63668B02068237B00835547 /* LevelsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsRouter.swift; sourceTree = "<group>"; };
+		B6377047206F765400DB2A73 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		B6377048206F765400DB2A73 /* SectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionCell.xib; sourceTree = "<group>"; };
+		B637704C206F7B0900DB2A73 /* SectionCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCellViewModel.swift; sourceTree = "<group>"; };
+		B637704E206F7D3F00DB2A73 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		B6377051206F7DED00DB2A73 /* FilesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManager.swift; sourceTree = "<group>"; };
+		B6377054206F7E2C00DB2A73 /* FilesManagerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManagerContract.swift; sourceTree = "<group>"; };
+		B6377056206F806300DB2A73 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		B637705A206F80D600DB2A73 /* ProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderContract.swift; sourceTree = "<group>"; };
 		B660E8E9205700C700A58172 /* MultiEduca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiEduca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B660E8EC205700C700A58172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B660E8EE205700C700A58172 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -100,6 +116,58 @@
 			path = Levels;
 			sourceTree = "<group>";
 		};
+		B6377046206F75E400DB2A73 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B637704C206F7B0900DB2A73 /* SectionCellViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B637704B206F797A00DB2A73 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B6377047206F765400DB2A73 /* SectionCell.swift */,
+				B6377048206F765400DB2A73 /* SectionCell.xib */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		B6377050206F7D7400DB2A73 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				B6377053206F7E0B00DB2A73 /* Files */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		B6377053206F7E0B00DB2A73 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				B6377051206F7DED00DB2A73 /* FilesManager.swift */,
+				B6377054206F7E2C00DB2A73 /* FilesManagerContract.swift */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		B6377058206F806A00DB2A73 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				B637705A206F80D600DB2A73 /* ProviderContract.swift */,
+				B6377056206F806300DB2A73 /* Provider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		B6377059206F808500DB2A73 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				B6348903206EB4C300044F18 /* DependencyFactoryContract.swift */,
+				B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */,
+			);
+			path = Dependencies;
+			sourceTree = "<group>";
+		};
 		B660E8E0205700C700A58172 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +192,8 @@
 				B660E8EC205700C700A58172 /* AppDelegate.swift */,
 				B6FA65F6205DA9ED00F551DC /* Core */,
 				B6FA65ED205DA0B100F551DC /* Modules */,
+				B6377050206F7D7400DB2A73 /* Workers */,
+				B637704B206F797A00DB2A73 /* CollectionViewCells */,
 				B660E8F0205700C700A58172 /* Main.storyboard */,
 				B660E8F6205700C700A58172 /* Assets.xcassets */,
 				B660E8F8205700C700A58172 /* LaunchScreen.storyboard */,
@@ -148,7 +218,9 @@
 				B6FA65F4205DA34500F551DC /* HomeContract.swift */,
 				B660E8EE205700C700A58172 /* HomeView.swift */,
 				B6FA65F0205DA30800F551DC /* HomePresenter.swift */,
+				B637704E206F7D3F00DB2A73 /* HomeInteractor.swift */,
 				B6FA65F2205DA32B00F551DC /* HomeRouter.swift */,
+				B6377046206F75E400DB2A73 /* Models */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -165,8 +237,8 @@
 		B6FA65F6205DA9ED00F551DC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				B6348903206EB4C300044F18 /* DependencyFactoryContract.swift */,
-				B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */,
+				B6377059206F808500DB2A73 /* Dependencies */,
+				B6377058206F806A00DB2A73 /* Provider */,
 				B63488FE206E5CB700044F18 /* Bases */,
 			);
 			path = Core;
@@ -258,6 +330,7 @@
 				B660E8FA205700C700A58172 /* LaunchScreen.storyboard in Resources */,
 				B660E8F7205700C700A58172 /* Assets.xcassets in Resources */,
 				B660E8F2205700C700A58172 /* Main.storyboard in Resources */,
+				B637704A206F765400DB2A73 /* SectionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,18 +350,25 @@
 			files = (
 				B6348902206E971900044F18 /* BaseViewController.swift in Sources */,
 				B6FA65F5205DA34500F551DC /* HomeContract.swift in Sources */,
+				B637705B206F80D600DB2A73 /* ProviderContract.swift in Sources */,
 				B63668B12068237B00835547 /* LevelsRouter.swift in Sources */,
 				B63668AB20681E7900835547 /* LevelsContract.swift in Sources */,
 				B660E8EF205700C700A58172 /* HomeView.swift in Sources */,
 				B63668AD20681F3E00835547 /* LevelsView.swift in Sources */,
+				B637704D206F7B0900DB2A73 /* SectionCellViewModel.swift in Sources */,
 				B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */,
+				B6377057206F806300DB2A73 /* Provider.swift in Sources */,
+				B6377049206F765400DB2A73 /* SectionCell.swift in Sources */,
 				B660E8F5205700C700A58172 /* MultiEduca.xcdatamodeld in Sources */,
 				B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */,
 				B63668AF2068236A00835547 /* LevelsPresenter.swift in Sources */,
+				B6377055206F7E2C00DB2A73 /* FilesManagerContract.swift in Sources */,
 				B6FA65F8205DAD2600F551DC /* DependencyFactory.swift in Sources */,
 				B6FA65FA205DB05B00F551DC /* ModulesContractBase.swift in Sources */,
 				B6FA65F3205DA32B00F551DC /* HomeRouter.swift in Sources */,
 				B6348904206EB4C300044F18 /* DependencyFactoryContract.swift in Sources */,
+				B637704F206F7D3F00DB2A73 /* HomeInteractor.swift in Sources */,
+				B6377052206F7DED00DB2A73 /* FilesManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

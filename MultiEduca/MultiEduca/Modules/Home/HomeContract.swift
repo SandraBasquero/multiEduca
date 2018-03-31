@@ -10,6 +10,8 @@ import Foundation
 
 
 protocol HomeViewContract:ViewContractBase {
+    
+    func renderSectionCells(sections:[SectionCellViewModel])
 
 }
 
@@ -17,6 +19,10 @@ protocol HomePresenterContract:PresenterContractBase {
     
 }
 
+
+protocol HomeInteractorContract {
+    
+}
 
 
 protocol HomeRouterContract {

@@ -21,4 +21,8 @@ class HomeView: BaseViewController<HomePresenter> {
 
 extension HomeView: HomeViewContract {
     
+    func renderSectionCells(sections: [SectionCellViewModel]) {
+        
+    }
+    
 }

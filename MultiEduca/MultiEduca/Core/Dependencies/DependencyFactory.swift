@@ -18,7 +18,7 @@ enum ModuleType {
 
 class DependencyFactory {
     
-    static let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    static let storyboard = UIStoryboard(name: "Main", bundle: nil) // TODO: Provider ?
     
     static func createModule(type:ModuleType) -> UIViewController
     {
@@ -38,8 +38,10 @@ extension DependencyFactory: DependencyFactoryContract {
     internal static func createHomeModule() -> HomeViewContract
     {
         let view = storyboard.instantiateViewController(withIdentifier: "HomeView") as! HomeView
+        let filesManager:FilesManagerContract = FilesManager() // TODO: Provider
+        let interactor:HomeInteractorContract = HomeInteractor(filesManager: filesManager)
         let router:HomeRouterContract = HomeRouter(view: view as HomeViewContract )
-        let presenter:HomePresenterContract = HomePresenter(view: view as HomeViewContract , router: router)
+        let presenter:HomePresenterContract = HomePresenter(view: view as HomeViewContract , router: router, interactor: interactor)
         view.presenter = presenter as! HomePresenter
         return view as HomeViewContract
     }
