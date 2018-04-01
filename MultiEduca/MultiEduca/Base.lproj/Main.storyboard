@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,21 +22,47 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YS3-eQ-tEK">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZWa-1f-lvT">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.63591890679999996" blue="0.2156199691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ZWa-1f-lvT">
+                                    <size key="itemSize" width="153" height="158"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Nth-VU-far">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="sectionCell" id="Nth-VU-far" customClass="SectionCell" customModule="MultiEduca" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="158"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="153" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nih-7I-bik">
+                                                    <rect key="frame" x="23" y="9.5" width="107" height="107"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Nih-7I-bik" secondAttribute="height" multiplier="1:1" id="Iyj-m3-NKJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="61q-lP-HU2">
+                                                    <rect key="frame" x="55" y="121.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.96336690739999997" green="1" blue="0.26109340730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Nih-7I-bik" firstAttribute="centerX" secondItem="Nth-VU-far" secondAttribute="centerX" id="AaL-8y-udH"/>
+                                            <constraint firstItem="61q-lP-HU2" firstAttribute="top" secondItem="Nih-7I-bik" secondAttribute="bottom" constant="5" id="WYU-DV-z2f"/>
+                                            <constraint firstItem="Nih-7I-bik" firstAttribute="centerY" secondItem="Nth-VU-far" secondAttribute="centerY" multiplier="0.8" id="fuZ-b4-TWi"/>
+                                            <constraint firstItem="61q-lP-HU2" firstAttribute="centerX" secondItem="Nih-7I-bik" secondAttribute="centerX" id="jKA-Lc-gsl"/>
+                                            <constraint firstItem="Nih-7I-bik" firstAttribute="width" secondItem="Nth-VU-far" secondAttribute="width" multiplier="0.7" id="qfF-uB-RLP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="Nih-7I-bik" id="OOL-iA-bGa"/>
+                                            <outlet property="name" destination="61q-lP-HU2" id="QP3-HG-RJ3"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -49,6 +77,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="MJn-Nx-eWt"/>
+                    <connections>
+                        <outlet property="collectionView" destination="YS3-eQ-tEK" id="mRg-ta-p9O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

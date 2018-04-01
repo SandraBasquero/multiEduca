@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class HomePresenter: HomePresenterContract {
     
@@ -25,8 +25,15 @@ class HomePresenter: HomePresenterContract {
     func start()
     {
         print("Testiiiing Home")
+        self.view.prepareView()
         
         // Get sections name and images and build [SectionCellViewModel] here -> from a json file?
+        let section1 = SectionCellViewModel(name: "Sección 1", image:  UIImage(named: "testImage")!)
+        let section2 = SectionCellViewModel(name: "Sección 2", image: UIImage(named: "testImage")!)
+        let section3 = SectionCellViewModel(name: "Sección 3", image: UIImage(named: "testImage")!)
+        let testSections:[SectionCellViewModel] = [section1, section2, section3]
+        
+        self.view.renderSectionCells(sections: testSections)
         
         // Call renderSectionCells(sections:[SectionCellViewModel]) here when completion
         

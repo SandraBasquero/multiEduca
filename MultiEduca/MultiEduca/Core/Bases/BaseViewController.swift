@@ -17,3 +17,4 @@ class BaseViewController<P:PresenterContractBase>: UIViewController {
     }
 
 }
+

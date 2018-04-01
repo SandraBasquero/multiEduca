@@ -11,5 +11,5 @@ import UIKit
 
 struct SectionCellViewModel {
     var name:String
-    var image:UIImageView
+    var image:UIImage
 }

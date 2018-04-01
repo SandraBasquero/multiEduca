@@ -11,8 +11,8 @@ import UIKit
 class SectionCell: UICollectionViewCell {
 
     
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var name: UILabel?
+    @IBOutlet weak var image: UIImageView?
     
     override func awakeFromNib() {
         super.awakeFromNib()
