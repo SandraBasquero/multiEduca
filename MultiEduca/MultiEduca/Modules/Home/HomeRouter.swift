@@ -9,12 +9,21 @@
 import Foundation
 import UIKit
 
-class HomeRouter: HomeRouterContract {
+class HomeRouter {
     
-    let view:HomeViewContract
+    let view:UIViewController
     
     init(view:HomeViewContract) {
-        self.view = view
+        self.view = view as! UIViewController
     }
+}
+
+
+extension HomeRouter: HomeRouterContract {
     
+    func navigateToLevelsOfSection(_ section: SectionCellViewModel)
+    {
+        let levels = DependencyFactory.createModuleWithData(type: .LEVELS_TYPE, data: section)
+        view.navigationController?.pushViewController(levels, animated: true)
+    }
 }

@@ -10,15 +10,19 @@ import Foundation
 
 
 protocol HomeViewContract:ViewContractBase {
-
+    func prepareView()
+    func renderSectionCells(sections:[SectionCellViewModel])
 }
 
 protocol HomePresenterContract:PresenterContractBase {
-    
+    func sectionSelected(viewModelSection:SectionCellViewModel)
 }
 
 
+protocol HomeInteractorContract {
+}
+
 
 protocol HomeRouterContract {
-    
+    func navigateToLevelsOfSection(_  section:SectionCellViewModel)
 }
