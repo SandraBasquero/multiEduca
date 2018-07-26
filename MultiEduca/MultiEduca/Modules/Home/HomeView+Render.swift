@@ -22,18 +22,30 @@ extension HomeView {
 
     func renderCell(index:IndexPath) -> UICollectionViewCell
     {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: index) as! SectionCell
-        cell.name?.text = sectionsArray![index.row].name
-        cell.image?.image = sectionsArray![index.row].image
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: index) as! SectionCell
+        cell.name?.text = self.sectionsArray![index.row].name
+        cell.image?.image = self.sectionsArray![index.row].image
         return cell
     }
     
     
     func setCellSize() -> CGSize
     {
-        let cellWidht = Int(self.collectionView.frame.width)/2
-        return CGSize(width: cellWidht, height: cellWidht)
+        let cellWidth:Int
+        let cellHeight:Int
+        if self.sectionsArray?.count == 1 {
+            cellWidth = Int(self.collectionView.frame.width)
+            cellHeight = Int(self.collectionView.frame.height)
+        } else if self.sectionsArray?.count == 2 {
+            cellWidth = Int(self.collectionView.frame.width)
+            cellHeight = Int(self.collectionView.frame.height)/2
+        } else {
+            cellWidth = Int(self.collectionView.frame.width)/2
+            cellHeight = cellWidth
+        }
+        return CGSize(width: cellWidth, height: cellHeight)
     }
+    
 }
 
 

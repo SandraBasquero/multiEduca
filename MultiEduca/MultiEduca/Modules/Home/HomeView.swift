@@ -22,20 +22,18 @@ class HomeView: BaseViewController<HomePresenter>, UICollectionViewDataSource, U
         self.presenter.start()
     }
     
-    override func viewWillLayoutSubviews() {
+    override func viewWillLayoutSubviews()
+    {
         super.viewWillLayoutSubviews()
         self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
-    //MARK: UICollectionViewDataSource
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.sectionsArray?.count ?? 0
     }
     
-//    func numberOfSections(in collectionView: UICollectionView) -> Int {
-//        return 1
-//    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
@@ -45,14 +43,10 @@ class HomeView: BaseViewController<HomePresenter>, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        print("\(indexPath.row + 1) selected")
+        presenter.sectionSelected(viewModelSection: sectionsArray![indexPath.row])
     }
     
-    //MARK: UICollectionViewDelegate
-    
-    
 
-    //MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         return self.setCellSize()
@@ -60,6 +54,9 @@ class HomeView: BaseViewController<HomePresenter>, UICollectionViewDataSource, U
 }
 
 
+//-----------------------
+// MARK: HomeViewContract
+//-----------------------
 extension HomeView: HomeViewContract {
     
     func prepareView()

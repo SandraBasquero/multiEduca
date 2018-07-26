@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomePresenter: HomePresenterContract {
+class HomePresenter {
     
     let view:HomeViewContract
     let router:HomeRouterContract
@@ -20,7 +20,10 @@ class HomePresenter: HomePresenterContract {
         self.router = router
         self.interactor = interactor
     }
-    
+}
+
+
+extension HomePresenter: HomePresenterContract{
     
     func start()
     {
@@ -28,9 +31,11 @@ class HomePresenter: HomePresenterContract {
         self.view.prepareView()
         
         // Get sections name and images and build [SectionCellViewModel] here -> from a json file?
-        let section1 = SectionCellViewModel(name: "Sección 1", image:  UIImage(named: "testImage")!)
-        let section2 = SectionCellViewModel(name: "Sección 2", image: UIImage(named: "testImage")!)
-        let section3 = SectionCellViewModel(name: "Sección 3", image: UIImage(named: "testImage")!)
+        // Mapper y demás...
+        let section1 = SectionCellViewModel(id: "1", name: "Sección 1", image:  UIImage(named: "testImage")!)
+        let section2 = SectionCellViewModel(id: "2", name: "Sección 2", image: UIImage(named: "testImage")!)
+        let section3 = SectionCellViewModel(id: "3", name: "Sección 3", image: UIImage(named: "testImage")!)
+        let section4 = SectionCellViewModel(id: "4", name: "Sección 4", image: UIImage(named: "testImage")!)
         let testSections:[SectionCellViewModel] = [section1, section2, section3]
         
         self.view.renderSectionCells(sections: testSections)
@@ -39,4 +44,9 @@ class HomePresenter: HomePresenterContract {
         
     }
     
+    
+    func sectionSelected(viewModelSection: SectionCellViewModel)
+    {
+        router.navigateToLevelsOfSection(viewModelSection)
+    }
 }

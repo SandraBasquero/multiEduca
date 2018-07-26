@@ -17,6 +17,12 @@ class LevelsView: BaseViewController<LevelsPresenter> {
         self.presenter.start()
     }
 
+    
+    func setData(data:SectionCellViewModel)
+    {
+        print(data.id)
+        print(data.name)
+    }
 }
 
 

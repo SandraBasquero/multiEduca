@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 struct SectionCellViewModel {
+    var id:String
     var name:String
     var image:UIImage
 }

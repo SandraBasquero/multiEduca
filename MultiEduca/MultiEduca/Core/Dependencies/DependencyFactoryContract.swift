@@ -12,5 +12,5 @@ import Foundation
 protocol DependencyFactoryContract {
     
     static func createHomeModule() -> HomeViewContract
-    static func createLevelsModule() -> LevelsViewContract
+    static func createLevelsModule(withData:SectionCellViewModel) -> LevelsViewContract
 }

@@ -15,15 +15,14 @@ protocol HomeViewContract:ViewContractBase {
 }
 
 protocol HomePresenterContract:PresenterContractBase {
-    
+    func sectionSelected(viewModelSection:SectionCellViewModel)
 }
 
 
 protocol HomeInteractorContract {
-    
 }
 
 
 protocol HomeRouterContract {
-    
+    func navigateToLevelsOfSection(_  section:SectionCellViewModel)
 }
