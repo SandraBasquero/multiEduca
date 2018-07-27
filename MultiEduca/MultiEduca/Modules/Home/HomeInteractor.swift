@@ -22,9 +22,16 @@ final class HomeInteractor {
 
 extension HomeInteractor: HomeInteractorContract {
     
-    func getHomeData() -> [HomeDataModel]
+    func getHomeData() -> [HomeDataModel]?
     {
-        return provider.getHomeData()
+        var data:[HomeDataModel]?
+        provider.getHomeData { (models, error) in
+            if error == nil && !(models?.isEmpty)! {
+                data = models
+            } else {
+                data = nil
+            }
+        }
+        return data
     }
-    
 }

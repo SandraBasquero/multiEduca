@@ -10,5 +10,6 @@ import Foundation
 
 
 protocol HomeDataCacheContract {
-    
+    func saveData(_ data:[HomeDataModel], forKey:String)
+    func getData(forKey:String) -> [HomeDataModel]?
 }

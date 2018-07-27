@@ -35,6 +35,7 @@
 		B660E8F7205700C700A58172 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F6205700C700A58172 /* Assets.xcassets */; };
 		B660E8FA205700C700A58172 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F8205700C700A58172 /* LaunchScreen.storyboard */; };
 		B660E905205700C700A58172 /* ReadFilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E904205700C700A58172 /* ReadFilesTests.swift */; };
+		B6720133210B8731003857AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6720132210B8731003857AC /* Constants.swift */; };
 		B6E5FBA6210B4F170037D3A0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E5FBA5210B4F170037D3A0 /* StringExtensions.swift */; };
 		B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F0205DA30800F551DC /* HomePresenter.swift */; };
 		B6FA65F3205DA32B00F551DC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F2205DA32B00F551DC /* HomeRouter.swift */; };
@@ -90,6 +91,7 @@
 		B660E900205700C700A58172 /* MultiEducaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiEducaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B660E904205700C700A58172 /* ReadFilesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFilesTests.swift; sourceTree = "<group>"; };
 		B660E906205700C700A58172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6720132210B8731003857AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6E5FBA5210B4F170037D3A0 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B6FA65F0205DA30800F551DC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B6FA65F2205DA32B00F551DC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -186,8 +188,7 @@
 		B6377058206F806A00DB2A73 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				B637705A206F80D600DB2A73 /* HomeDataProviderContract.swift */,
-				B6377056206F806300DB2A73 /* HomeDataProvider.swift */,
+				B6720130210B86F3003857AC /* Home */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -275,6 +276,23 @@
 			path = MultiEducaTests;
 			sourceTree = "<group>";
 		};
+		B6720130210B86F3003857AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B637705A206F80D600DB2A73 /* HomeDataProviderContract.swift */,
+				B6377056206F806300DB2A73 /* HomeDataProvider.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B6720131210B8710003857AC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B6720132210B8731003857AC /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		B67EE0CF2070EC4000C71E6E /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +340,7 @@
 				B63488FE206E5CB700044F18 /* Bases */,
 				B67EE0CF2070EC4000C71E6E /* Models */,
 				B6E5FBA4210B4E670037D3A0 /* Extensions */,
+				B6720131210B8710003857AC /* Constants */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -565,6 +584,7 @@
 				B6348904206EB4C300044F18 /* DependencyFactoryContract.swift in Sources */,
 				B637704F206F7D3F00DB2A73 /* HomeInteractor.swift in Sources */,
 				B6377052206F7DED00DB2A73 /* FilesManager.swift in Sources */,
+				B6720133210B8731003857AC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

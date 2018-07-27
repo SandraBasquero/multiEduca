@@ -11,6 +11,6 @@ import Foundation
 
 protocol HomeDataProviderContract {
     
-    func getHomeData() -> [HomeDataModel]
+    func getHomeData(completion:@escaping([HomeDataModel]?, NSError?)->Void)
     
 }

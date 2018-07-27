@@ -20,7 +20,7 @@ protocol HomePresenterContract:PresenterContractBase {
 
 
 protocol HomeInteractorContract {
-    func getHomeData() -> [HomeDataModel]
+    func getHomeData() -> [HomeDataModel]?
 }
 
 
