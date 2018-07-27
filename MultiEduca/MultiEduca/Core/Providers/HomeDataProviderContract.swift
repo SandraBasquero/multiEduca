@@ -9,6 +9,8 @@
 import Foundation
 
 
-protocol ProviderContract {
+protocol HomeDataProviderContract {
+    
+    func getHomeData() -> [HomeDataModel]
     
 }

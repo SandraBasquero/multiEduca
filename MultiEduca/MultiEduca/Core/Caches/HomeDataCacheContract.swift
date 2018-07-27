@@ -1,14 +1,14 @@
 //
-//  Provider.swift
+//  HomeDataCacheContract.swift
 //  MultiEduca
 //
-//  Created by Sandra on 31/3/18.
+//  Created by Sandra on 27/7/18.
 //  Copyright © 2018 Sandra. All rights reserved.
 //
 
 import Foundation
 
-class Provider: ProviderContract {
-    
+
+protocol HomeDataCacheContract {
     
 }

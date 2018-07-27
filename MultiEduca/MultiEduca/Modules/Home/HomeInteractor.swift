@@ -9,13 +9,22 @@
 import Foundation
 
 
-class HomeInteractor: HomeInteractorContract {
+final class HomeInteractor {
     
-    let filesManager:FilesManagerContract
+    let provider:HomeDataProviderContract
     
-    init(filesManager:FilesManagerContract) {
-        self.filesManager = filesManager
+    init(provider:HomeDataProviderContract)
+    {
+        self.provider = provider
     }
+}
+
+
+extension HomeInteractor: HomeInteractorContract {
     
+    func getHomeData() -> [HomeDataModel]
+    {
+        return provider.getHomeData()
+    }
     
 }
