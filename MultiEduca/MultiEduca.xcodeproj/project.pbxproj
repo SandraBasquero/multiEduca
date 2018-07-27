@@ -36,6 +36,7 @@
 		B660E8FA205700C700A58172 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F8205700C700A58172 /* LaunchScreen.storyboard */; };
 		B660E905205700C700A58172 /* ReadFilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E904205700C700A58172 /* ReadFilesTests.swift */; };
 		B6720133210B8731003857AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6720132210B8731003857AC /* Constants.swift */; };
+		B6720135210B9ADE003857AC /* HomeDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6720134210B9ADE003857AC /* HomeDataTests.swift */; };
 		B6E5FBA6210B4F170037D3A0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E5FBA5210B4F170037D3A0 /* StringExtensions.swift */; };
 		B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F0205DA30800F551DC /* HomePresenter.swift */; };
 		B6FA65F3205DA32B00F551DC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F2205DA32B00F551DC /* HomeRouter.swift */; };
@@ -92,6 +93,7 @@
 		B660E904205700C700A58172 /* ReadFilesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFilesTests.swift; sourceTree = "<group>"; };
 		B660E906205700C700A58172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6720132210B8731003857AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6720134210B9ADE003857AC /* HomeDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataTests.swift; sourceTree = "<group>"; };
 		B6E5FBA5210B4F170037D3A0 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B6FA65F0205DA30800F551DC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B6FA65F2205DA32B00F551DC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				B660E904205700C700A58172 /* ReadFilesTests.swift */,
+				B6720134210B9ADE003857AC /* HomeDataTests.swift */,
 				B660E906205700C700A58172 /* Info.plist */,
 			);
 			path = MultiEducaTests;
@@ -593,6 +596,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B660E905205700C700A58172 /* ReadFilesTests.swift in Sources */,
+				B6720135210B9ADE003857AC /* HomeDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
