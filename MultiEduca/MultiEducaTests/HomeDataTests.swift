@@ -50,10 +50,8 @@ class HomeDataTests: XCTestCase {
             XCTAssertNil(resultData)
         }
         if dataTest == nil {
-            XCTAssertNotNil(errorTest)
             XCTAssertNil(resultData)
         }
-        
     }
     
     
