@@ -28,6 +28,8 @@
 		B64F4E16210B1BFD0006EE32 /* HomeDataCacheContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */; };
 		B64F4E19210B211B0006EE32 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = B64F4E18210B211B0006EE32 /* Home.json */; };
 		B64F4E1E210B2B8F0006EE32 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E1D210B2B8F0006EE32 /* HomeDataModel.swift */; };
+		B65BA45C210CC25A00425F73 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BA45B210CC25A00425F73 /* ViewControllerExtensions.swift */; };
+		B65BA45E210CC69A00425F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B65BA45D210CC69A00425F73 /* Localizable.strings */; };
 		B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EC205700C700A58172 /* AppDelegate.swift */; };
 		B660E8EF205700C700A58172 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EE205700C700A58172 /* HomeView.swift */; };
 		B660E8F2205700C700A58172 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B660E8F0205700C700A58172 /* Main.storyboard */; };
@@ -81,6 +83,8 @@
 		B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataCacheContract.swift; sourceTree = "<group>"; };
 		B64F4E18210B211B0006EE32 /* Home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
 		B64F4E1D210B2B8F0006EE32 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
+		B65BA45B210CC25A00425F73 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		B65BA45D210CC69A00425F73 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B660E8E9205700C700A58172 /* MultiEduca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiEduca.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B660E8EC205700C700A58172 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B660E8EE205700C700A58172 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				B64F4E18210B211B0006EE32 /* Home.json */,
+				B65BA45D210CC69A00425F73 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				B6E5FBA5210B4F170037D3A0 /* StringExtensions.swift */,
+				B65BA45B210CC25A00425F73 /* ViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B660E8FA205700C700A58172 /* LaunchScreen.storyboard in Resources */,
+				B65BA45E210CC69A00425F73 /* Localizable.strings in Resources */,
 				B660E8F7205700C700A58172 /* Assets.xcassets in Resources */,
 				B64F4E19210B211B0006EE32 /* Home.json in Resources */,
 				B660E8F2205700C700A58172 /* Main.storyboard in Resources */,
@@ -571,6 +578,7 @@
 				B660E8EF205700C700A58172 /* HomeView.swift in Sources */,
 				B63668AD20681F3E00835547 /* LevelsView.swift in Sources */,
 				B637704D206F7B0900DB2A73 /* SectionCellViewModel.swift in Sources */,
+				B65BA45C210CC25A00425F73 /* ViewControllerExtensions.swift in Sources */,
 				B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */,
 				B6377057206F806300DB2A73 /* HomeDataProvider.swift in Sources */,
 				B64F4E1E210B2B8F0006EE32 /* HomeDataModel.swift in Sources */,

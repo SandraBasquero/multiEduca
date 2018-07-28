@@ -12,6 +12,7 @@ import Foundation
 protocol HomeViewContract:ViewContractBase {
     func prepareView()
     func renderSectionCells(sections:[SectionCellViewModel])
+    func showAlert(title:String?, message:String?)
 }
 
 protocol HomePresenterContract:PresenterContractBase {

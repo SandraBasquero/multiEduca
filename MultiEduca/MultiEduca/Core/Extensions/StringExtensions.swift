@@ -19,4 +19,7 @@ extension String {
         return image
     }
     
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
 }

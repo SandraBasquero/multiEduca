@@ -27,13 +27,11 @@ extension HomePresenter: HomePresenterContract{
     
     func start()
     {
-        print("Testiiiing Home")
         self.view.prepareView()
         if let data = interactor.getHomeData() {
             self.view.renderSectionCells(sections: modelToViewModelMapper(input: data))
         } else {
-            // TODO: render error
-            print("Error")
+            self.view.showAlert(title: nil, message: "home_error_message".localized)
         }
     }
     
