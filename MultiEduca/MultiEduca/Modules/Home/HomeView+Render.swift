@@ -23,7 +23,9 @@ extension HomeView {
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 15
         collectionView!.collectionViewLayout = layout
-        self.navigationItem.title = "home_bar_title".localized
+        self.navigationItem.title = "home_bar_title".localized.uppercased()
+        self.navigationController?.navigationBar.tintColor = UIColor.groupTableViewBackground
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray, NSAttributedStringKey.font: UIFont(name: "DINAlternate-Bold", size: 22)!]
     }
     
 
@@ -37,7 +39,7 @@ extension HomeView {
         cell.layer.shadowOffset = CGSize(width: CGFloat(3.0), height: CGFloat(3.0))
         cell.layer.shadowOpacity = 0.3
         cell.layer.shadowPath = shadowPath2.cgPath
-        cell.name?.text = self.sectionsArray![index.row].name
+        cell.name?.text = self.sectionsArray![index.row].name.uppercased()
         cell.image?.image = self.sectionsArray![index.row].image
         return cell
     }
