@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HomePresenter {
+final class HomePresenter {
     
     let view:HomeViewContract
     let router:HomeRouterContract
@@ -27,26 +27,30 @@ extension HomePresenter: HomePresenterContract{
     
     func start()
     {
-        print("Testiiiing Home")
         self.view.prepareView()
-        
-        // Get sections name and images and build [SectionCellViewModel] here -> from a json file?
-        // Mapper y demás...
-        let section1 = SectionCellViewModel(id: "1", name: "Sección 1", image:  UIImage(named: "testImage")!)
-        let section2 = SectionCellViewModel(id: "2", name: "Sección 2", image: UIImage(named: "testImage")!)
-        let section3 = SectionCellViewModel(id: "3", name: "Sección 3", image: UIImage(named: "testImage")!)
-        let section4 = SectionCellViewModel(id: "4", name: "Sección 4", image: UIImage(named: "testImage")!)
-        let testSections:[SectionCellViewModel] = [section1, section2, section3]
-        
-        self.view.renderSectionCells(sections: testSections)
-        
-        // Call renderSectionCells(sections:[SectionCellViewModel]) here when completion
-        
+        if let data = interactor.getHomeData() {
+            self.view.renderSectionCells(sections: modelToViewModelMapper(input: data))
+        } else {
+            self.view.showAlert(title: nil, message: "home_error_message".localized)
+        }
     }
     
     
     func sectionSelected(viewModelSection: SectionCellViewModel)
     {
         router.navigateToLevelsOfSection(viewModelSection)
+    }
+}
+
+
+extension HomePresenter {
+
+    fileprivate func modelToViewModelMapper(input:[HomeDataModel]) -> [SectionCellViewModel]
+    {
+        var cells:[SectionCellViewModel] = []
+        for model in input {
+            cells.append(SectionCellViewModel(id: model.id!, name: model.name!, image: (model.imageBase64?.base64ToImage())!))
+        }
+        return cells
     }
 }

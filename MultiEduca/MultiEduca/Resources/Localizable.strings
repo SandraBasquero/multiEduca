@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  MultiEduca
+
+  Created by Sandra on 28/7/18.
+  Copyright © 2018 Sandra. All rights reserved.
+*/
+
+"home_bar_title"                            = "Elige un área";
+"home_error_button"                         = "Aceptar";
+"home_error_message"                        = "Error al cargar los juegos";

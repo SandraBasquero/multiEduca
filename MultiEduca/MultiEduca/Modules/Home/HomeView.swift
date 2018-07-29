@@ -45,12 +45,6 @@ class HomeView: BaseViewController<HomePresenter>, UICollectionViewDataSource, U
     {
         presenter.sectionSelected(viewModelSection: sectionsArray![indexPath.row])
     }
-    
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
-    {
-        return self.setCellSize()
-    }
 }
 
 
@@ -68,6 +62,14 @@ extension HomeView: HomeViewContract {
     func renderSectionCells(sections: [SectionCellViewModel])
     {
         self.sectionsArray = sections
+    }
+    
+    
+    func showAlert(title: String?, message: String?)
+    {
+        self.showSimpleAlert(title: title, message: message, buttonText: "home_error_button".localized) { (alert) in
+            exit(0)
+        }
     }
 }
 

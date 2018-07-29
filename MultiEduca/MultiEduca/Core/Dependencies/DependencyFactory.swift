@@ -45,8 +45,8 @@ extension DependencyFactory: DependencyFactoryContract {
     internal static func createHomeModule() -> HomeViewContract
     {
         let view = storyboard.instantiateViewController(withIdentifier: "HomeView") as! HomeView
-        let filesManager:FilesManagerContract = FilesManager() // TODO: Provider
-        let interactor:HomeInteractorContract = HomeInteractor(filesManager: filesManager)
+        let provider:HomeDataProviderContract = HomeDataProvider()
+        let interactor:HomeInteractorContract = HomeInteractor(provider: provider)
         let router:HomeRouterContract = HomeRouter(view: view as HomeViewContract )
         let presenter:HomePresenterContract = HomePresenter(view: view as HomeViewContract , router: router, interactor: interactor)
         view.presenter = presenter as? HomePresenter
