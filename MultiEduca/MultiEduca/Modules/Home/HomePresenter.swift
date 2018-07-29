@@ -54,8 +54,3 @@ extension HomePresenter {
         return cells
     }
 }
-
-
-
-
-

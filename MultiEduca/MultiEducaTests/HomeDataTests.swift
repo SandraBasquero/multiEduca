@@ -11,17 +11,6 @@ import XCTest
 
 class HomeDataTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-
     func testHomeDataProvider()
     {
         let provider:HomeDataProviderContract = HomeDataProvider()
@@ -53,6 +42,4 @@ class HomeDataTests: XCTestCase {
             XCTAssertNil(resultData)
         }
     }
-    
-    
 }
