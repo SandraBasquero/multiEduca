@@ -9,7 +9,7 @@
 import Foundation
 
 protocol LevelsViewContract:ViewContractBase {
-    
+    func prepareViews()
 }
 
 protocol LevelsPresenterContract:PresenterContractBase {

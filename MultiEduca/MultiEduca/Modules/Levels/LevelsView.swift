@@ -11,6 +11,7 @@ import UIKit
 
 class LevelsView: BaseViewController<LevelsPresenter> {
     
+    private var sectionSelectedData:SectionCellViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,14 +19,36 @@ class LevelsView: BaseViewController<LevelsPresenter> {
     }
 
     
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+    }
+    
+    
     func setData(data:SectionCellViewModel)
     {
-        print(data.id)
-        print(data.name)
+        sectionSelectedData = data
     }
 }
 
 
 extension LevelsView:LevelsViewContract {
     
+    func prepareViews()
+    {
+        setupViews()
+    }
 }
+
+
+extension LevelsView {
+    
+    func setupViews()
+    {
+        self.navigationItem.title = sectionSelectedData?.name.uppercased()
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor.darkGray
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray, NSAttributedStringKey.font: UIFont(name: "DINAlternate-Bold", size: 22)!]
+    }
+}
+
