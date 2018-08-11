@@ -21,6 +21,11 @@ class HomeView: BaseViewController<HomePresenter>, UICollectionViewDataSource, U
         super.viewDidLoad()
         self.presenter.start()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
+    }
     
     override func viewWillLayoutSubviews()
     {

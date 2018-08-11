@@ -24,6 +24,8 @@
 		B6377055206F7E2C00DB2A73 /* FilesManagerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6377054206F7E2C00DB2A73 /* FilesManagerContract.swift */; };
 		B6377057206F806300DB2A73 /* HomeDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6377056206F806300DB2A73 /* HomeDataProvider.swift */; };
 		B637705B206F80D600DB2A73 /* HomeDataProviderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637705A206F80D600DB2A73 /* HomeDataProviderContract.swift */; };
+		B6403F772117600700FB927A /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6403F752117600700FB927A /* TitleCollectionViewCell.swift */; };
+		B6403F782117600700FB927A /* TitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6403F762117600700FB927A /* TitleCollectionViewCell.xib */; };
 		B64F4E14210B1B5B0006EE32 /* HomeDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E13210B1B5B0006EE32 /* HomeDataCache.swift */; };
 		B64F4E16210B1BFD0006EE32 /* HomeDataCacheContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */; };
 		B64F4E19210B211B0006EE32 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = B64F4E18210B211B0006EE32 /* Home.json */; };
@@ -79,6 +81,8 @@
 		B6377054206F7E2C00DB2A73 /* FilesManagerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilesManagerContract.swift; sourceTree = "<group>"; };
 		B6377056206F806300DB2A73 /* HomeDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataProvider.swift; sourceTree = "<group>"; };
 		B637705A206F80D600DB2A73 /* HomeDataProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataProviderContract.swift; sourceTree = "<group>"; };
+		B6403F752117600700FB927A /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		B6403F762117600700FB927A /* TitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		B64F4E13210B1B5B0006EE32 /* HomeDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataCache.swift; sourceTree = "<group>"; };
 		B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataCacheContract.swift; sourceTree = "<group>"; };
 		B64F4E18210B211B0006EE32 /* Home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				B64F4E1A210B216D0006EE32 /* Section */,
+				B6403F792117606A00FB927A /* OneText */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -206,6 +211,15 @@
 				B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */,
 			);
 			path = Dependencies;
+			sourceTree = "<group>";
+		};
+		B6403F792117606A00FB927A /* OneText */ = {
+			isa = PBXGroup;
+			children = (
+				B6403F752117600700FB927A /* TitleCollectionViewCell.swift */,
+				B6403F762117600700FB927A /* TitleCollectionViewCell.xib */,
+			);
+			path = OneText;
 			sourceTree = "<group>";
 		};
 		B64F4E12210B1B2E0006EE32 /* Caches */ = {
@@ -448,6 +462,7 @@
 				B660E8F7205700C700A58172 /* Assets.xcassets in Resources */,
 				B64F4E19210B211B0006EE32 /* Home.json in Resources */,
 				B660E8F2205700C700A58172 /* Main.storyboard in Resources */,
+				B6403F782117600700FB927A /* TitleCollectionViewCell.xib in Resources */,
 				B632FD1C20701454003157A5 /* testImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +586,7 @@
 				B6348902206E971900044F18 /* BaseViewController.swift in Sources */,
 				B6FA65F5205DA34500F551DC /* HomeContract.swift in Sources */,
 				B637705B206F80D600DB2A73 /* HomeDataProviderContract.swift in Sources */,
+				B6403F772117600700FB927A /* TitleCollectionViewCell.swift in Sources */,
 				B636C7632070DA1700D9C9A9 /* HomeView+Render.swift in Sources */,
 				B63668B12068237B00835547 /* LevelsRouter.swift in Sources */,
 				B6E5FBA6210B4F170037D3A0 /* StringExtensions.swift in Sources */,
