@@ -12,14 +12,16 @@ class TitleCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var titleCell: UILabel!
     
+    static let identifier = "levelCell"
+    
     static func registerCellForCollectionView(_ collectionView:UICollectionView)
     {
-        collectionView.register(UINib.init(nibName: "TitleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "levelCell")
+        collectionView.register(UINib.init(nibName: "TitleCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifier)
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        titleCell.textColor = UIColor.darkGray
+        titleCell.font = UIFont(name: Constants.Styles.primaryFont, size: 20)
     }
-
 }

@@ -10,4 +10,9 @@ import Foundation
 
 struct Constants {
     static let homeData = "HomeData"
+    
+    
+    struct Styles {
+        static let primaryFont = "DINAlternate-Bold"
+    }
 }

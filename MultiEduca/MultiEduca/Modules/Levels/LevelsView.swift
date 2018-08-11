@@ -16,9 +16,11 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var sectionSelectedData:SectionCellViewModel?
-    let cellIdentifier = "levelCell"
+    private let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
-    override func viewDidLoad() {
+    // MARK: - Live circle
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         self.presenter.start()
     }
@@ -30,6 +32,15 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     }
     
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
+    {
+        if UIDevice.current.orientation.isLandscape {
+            setLayout()
+        } 
+    }
+    
+    
+    // MARK: - UITableView data source and delegates
     func setData(data:SectionCellViewModel)
     {
         sectionSelectedData = data
@@ -49,7 +60,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! TitleCollectionViewCell
+        let cell = self.collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as! TitleCollectionViewCell
         cell.layer.cornerRadius = 10
         let shadowPath2 = UIBezierPath(rect: cell.bounds)
         cell.layer.masksToBounds = false
@@ -66,9 +77,19 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     {
         
     }
+    
+    // MARK: - Collection View layout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
+    {
+        let totalCellWidth =  (Int(self.collectionView.frame.width)/2)
+        let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth))
+        let rightInset = leftInset
+        return UIEdgeInsetsMake(25, leftInset, 0, rightInset)
+    }
 }
 
 
+// MARK: - LevelsViewContract
 extension LevelsView:LevelsViewContract {
     
     func prepareViews()
@@ -78,28 +99,32 @@ extension LevelsView:LevelsViewContract {
 }
 
 
+// MARK: - LevelsView
 extension LevelsView {
     
-    func setupViews()
+   fileprivate func setupViews()
     {
         self.navigationItem.title = sectionSelectedData?.name.uppercased()
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.darkGray
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray, NSAttributedStringKey.font: UIFont(name: "DINAlternate-Bold", size: 22)!]
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray, NSAttributedStringKey.font: UIFont(name: Constants.Styles.primaryFont, size: 22)!]
         TitleCollectionViewCell.registerCellForCollectionView(collectionView)
-        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        setLayout()
+    }
+    
+    
+    fileprivate func setLayout()
+    {
         layout.sectionInset = UIEdgeInsets(top: 10, left: 5, bottom: 10, right: 5)
         layout.itemSize = self.setCellSize()
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 15
         collectionView!.collectionViewLayout = layout
-        collectionView.contentInset.top = max((collectionView.frame.height - collectionView.contentSize.height) / 3, 0) - (navigationController?.navigationBar.frame.size.height)!
-
+        collectionView.contentInset.top = 20
     }
     
     
-    func setCellSize() -> CGSize
+    fileprivate func setCellSize() -> CGSize
     {
         let cellWidth:Int
         let cellHeight:Int
