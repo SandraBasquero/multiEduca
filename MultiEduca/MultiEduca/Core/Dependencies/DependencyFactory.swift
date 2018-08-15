@@ -18,7 +18,7 @@ enum ModuleType {
 
 class DependencyFactory {
     
-    static let storyboard = UIStoryboard(name: "Main", bundle: nil) // TODO: Provider ?
+    static let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     static func createModule(type:ModuleType) -> UIViewController
     {

@@ -30,4 +30,18 @@ class FilesManager: FilesManagerContract {
         return result
     }
     
+    
+    func readGameContentDataFile() -> GameContentModel?
+    {
+        var result:GameContentModel?
+        if let path = Bundle.main.path(forResource: "GameContent", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                result = try? JSONDecoder().decode(GameContentModel.self, from: data)
+            } catch {
+                result = nil
+            }
+        }
+        return result
+    }
 }

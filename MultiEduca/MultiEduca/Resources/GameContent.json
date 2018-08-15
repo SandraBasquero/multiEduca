@@ -1,0 +1,72 @@
+[
+    {
+        "id": "1",
+        "levels": [
+            {
+                "id": "l1",
+                "contents": [
+                    {
+                        "description": "Ordena los elementos de forma correcta:",
+                        "answer": "3 + 5 = 8",
+                        "points": 1
+                    },
+                    {
+                        "description": "Ordena los elementos de forma correcta:",
+                        "answer": "4 + 9 = 13",
+                        "points": 1
+                    }
+                ]
+            },
+            {
+                "id": "l2",
+                "contents": [
+                    {
+                        "description": "Ordena los elementos de forma correcta:",
+                        "answer": "2 X 2 = 4",
+                        "points": 2
+                    },
+                    {
+                        "description": "Ordena los elementos de forma correcta:",
+                        "answer": "5 X 3 = 15",
+                        "points": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "levels": [
+            {
+                "id": "l1",
+                "contents": [
+                    {
+                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: VERBO - SUSTANTIVO - ADJETIVO",
+                        "answer": "Encontró manzanas verdes",
+                        "points": 1
+                    },
+                    {
+                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: VERBO - DETERMINANTE - SUSTANTIVO",
+                        "answer": "Abriré la ventana",
+                        "points": 1
+                    }
+                ]
+            },
+            {
+                "id": "l2",
+                "contents": [
+                    {
+                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: DETERMINANTE - SUSTANTIVO - VERBO - ADJETIVO",
+                        "answer": "El águila vuela alto",
+                        "points": 2
+                    },
+                    {
+                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: SUSTANTIVO - PREPOSICIÓN - SUSTANTIVO - CONJUNCIÓN - SUSTANTIVO",
+                        "answer": "Clases de violín y ukelele",
+                        "points": 2
+                    }
+                ]
+            }
+        ]
+    }
+]
