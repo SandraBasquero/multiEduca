@@ -15,7 +15,7 @@ class HomeDataCache {
 }
 
 
-extension HomeDataCache:HomeDataCacheContract {
+extension HomeDataCache: HomeDataCacheContract {
     
     func saveData(_ data: [HomeDataModel], forKey: String)
     {

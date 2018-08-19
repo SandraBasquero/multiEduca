@@ -43,6 +43,11 @@
 		B660E905205700C700A58172 /* ReadFilesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E904205700C700A58172 /* ReadFilesTests.swift */; };
 		B6720133210B8731003857AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6720132210B8731003857AC /* Constants.swift */; };
 		B6720135210B9ADE003857AC /* HomeDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6720134210B9ADE003857AC /* HomeDataTests.swift */; };
+		B69656792129CA32002A579C /* GameContentCacheContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69656782129CA32002A579C /* GameContentCacheContract.swift */; };
+		B696567B2129CB65002A579C /* GameContentCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696567A2129CB65002A579C /* GameContentCache.swift */; };
+		B696567E2129CEAA002A579C /* LevelsDataProviderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696567D2129CEAA002A579C /* LevelsDataProviderContract.swift */; };
+		B69656802129D0B5002A579C /* LevelsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B696567F2129D0B5002A579C /* LevelsDataProvider.swift */; };
+		B69656822129D9BC002A579C /* LevelsProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69656812129D9BC002A579C /* LevelsProviderTests.swift */; };
 		B6E5FBA6210B4F170037D3A0 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E5FBA5210B4F170037D3A0 /* StringExtensions.swift */; };
 		B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F0205DA30800F551DC /* HomePresenter.swift */; };
 		B6FA65F3205DA32B00F551DC /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F2205DA32B00F551DC /* HomeRouter.swift */; };
@@ -106,6 +111,11 @@
 		B660E906205700C700A58172 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6720132210B8731003857AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B6720134210B9ADE003857AC /* HomeDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataTests.swift; sourceTree = "<group>"; };
+		B69656782129CA32002A579C /* GameContentCacheContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentCacheContract.swift; sourceTree = "<group>"; };
+		B696567A2129CB65002A579C /* GameContentCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentCache.swift; sourceTree = "<group>"; };
+		B696567D2129CEAA002A579C /* LevelsDataProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsDataProviderContract.swift; sourceTree = "<group>"; };
+		B696567F2129D0B5002A579C /* LevelsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsDataProvider.swift; sourceTree = "<group>"; };
+		B69656812129D9BC002A579C /* LevelsProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsProviderTests.swift; sourceTree = "<group>"; };
 		B6E5FBA5210B4F170037D3A0 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		B6FA65F0205DA30800F551DC /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		B6FA65F2205DA32B00F551DC /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -204,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				B6720130210B86F3003857AC /* Home */,
+				B696567C2129CE57002A579C /* Levels */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -231,6 +242,8 @@
 			children = (
 				B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */,
 				B64F4E13210B1B5B0006EE32 /* HomeDataCache.swift */,
+				B69656782129CA32002A579C /* GameContentCacheContract.swift */,
+				B696567A2129CB65002A579C /* GameContentCache.swift */,
 			);
 			path = Caches;
 			sourceTree = "<group>";
@@ -298,6 +311,7 @@
 			children = (
 				B660E904205700C700A58172 /* ReadFilesTests.swift */,
 				B6720134210B9ADE003857AC /* HomeDataTests.swift */,
+				B69656812129D9BC002A579C /* LevelsProviderTests.swift */,
 				B660E906205700C700A58172 /* Info.plist */,
 			);
 			path = MultiEducaTests;
@@ -327,6 +341,15 @@
 				B65764D121242DC60046F4A4 /* GameContentModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B696567C2129CE57002A579C /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				B696567D2129CEAA002A579C /* LevelsDataProviderContract.swift */,
+				B696567F2129D0B5002A579C /* LevelsDataProvider.swift */,
+			);
+			path = Levels;
 			sourceTree = "<group>";
 		};
 		B6E5FBA4210B4E670037D3A0 /* Extensions */ = {
@@ -592,9 +615,12 @@
 			files = (
 				B6348902206E971900044F18 /* BaseViewController.swift in Sources */,
 				B6FA65F5205DA34500F551DC /* HomeContract.swift in Sources */,
+				B69656792129CA32002A579C /* GameContentCacheContract.swift in Sources */,
 				B637705B206F80D600DB2A73 /* HomeDataProviderContract.swift in Sources */,
 				B6403F772117600700FB927A /* TitleCollectionViewCell.swift in Sources */,
+				B69656802129D0B5002A579C /* LevelsDataProvider.swift in Sources */,
 				B636C7632070DA1700D9C9A9 /* HomeView+Render.swift in Sources */,
+				B696567E2129CEAA002A579C /* LevelsDataProviderContract.swift in Sources */,
 				B63668B12068237B00835547 /* LevelsRouter.swift in Sources */,
 				B6E5FBA6210B4F170037D3A0 /* StringExtensions.swift in Sources */,
 				B63668AB20681E7900835547 /* LevelsContract.swift in Sources */,
@@ -615,6 +641,7 @@
 				B6377055206F7E2C00DB2A73 /* FilesManagerContract.swift in Sources */,
 				B6FA65F8205DAD2600F551DC /* DependencyFactory.swift in Sources */,
 				B6FA65FA205DB05B00F551DC /* ModulesContractBase.swift in Sources */,
+				B696567B2129CB65002A579C /* GameContentCache.swift in Sources */,
 				B6FA65F3205DA32B00F551DC /* HomeRouter.swift in Sources */,
 				B6348904206EB4C300044F18 /* DependencyFactoryContract.swift in Sources */,
 				B637704F206F7D3F00DB2A73 /* HomeInteractor.swift in Sources */,
@@ -627,6 +654,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69656822129D9BC002A579C /* LevelsProviderTests.swift in Sources */,
 				B660E905205700C700A58172 /* ReadFilesTests.swift in Sources */,
 				B6720135210B9ADE003857AC /* HomeDataTests.swift in Sources */,
 			);
