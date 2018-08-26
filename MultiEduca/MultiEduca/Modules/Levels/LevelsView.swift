@@ -17,12 +17,17 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     private var sectionSelectedData:SectionCellViewModel?
     private let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    private var levels:[Int]?
+    
     
     // MARK: - Live circle
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.presenter.start()
+        if let id = sectionSelectedData?.id {
+            self.presenter.getLevelsForGameId(id)
+        }
     }
 
     
@@ -55,7 +60,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     func numberOfSections(in collectionView: UICollectionView) -> Int
     {
-        return 3
+        return levels?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -68,7 +73,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
         cell.layer.shadowOffset = CGSize(width: CGFloat(3.0), height: CGFloat(3.0))
         cell.layer.shadowOpacity = 0.3
         cell.layer.shadowPath = shadowPath2.cgPath
-        cell.titleCell.text = "Nivel 1"
+        cell.titleCell.text = String(format: "level_levels_button_text".localized, levels?[indexPath.section] ?? 0)
         return cell
     }
     
@@ -77,6 +82,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     {
         
     }
+    
     
     // MARK: - Collection View layout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
@@ -95,6 +101,21 @@ extension LevelsView:LevelsViewContract {
     func prepareViews()
     {
         setupViews()
+    }
+    
+    
+    func setLevelsGame(levels: [Int])
+    {
+        self.levels = levels
+        collectionView.reloadData()
+    }
+    
+    
+    func showAlert(title: String?, message: String?)
+    {
+        self.showSimpleAlert(title: title, message: message, buttonText: "home_error_button".localized) { (alert) in
+            self.presenter.goToHomeMenu()
+        }
     }
 }
 

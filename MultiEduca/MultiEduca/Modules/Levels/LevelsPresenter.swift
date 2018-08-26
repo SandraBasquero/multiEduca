@@ -28,10 +28,21 @@ extension LevelsPresenter: LevelsPresenterContract {
     func start()
     {
         view.prepareViews()
-        if let levelsGame = interactor.getLevelsOfGame(gameId: "1") {
-            print(levelsGame ?? "Nothing")
+    }
+    
+    
+    func getLevelsForGameId(_ id: String)
+    {
+        if let levelsGame = interactor.getLevelsOfGame(gameId: id) {
+            view.setLevelsGame(levels: levelsGame)
         } else {
-            // TODO: render error
+            view.showAlert(title: "", message: "level_no_level_error_message".localized)
         }
+    }
+    
+    
+    func goToHomeMenu()
+    {
+        router.navigateBackHomeMenu()
     }
 }

@@ -7,13 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 
-class LevelsRouter:LevelsRouterContract {
+class LevelsRouter {
     
-    var view:LevelsViewContract
+    var view:UIViewController
     
     init(view:LevelsViewContract) {
-        self.view = view
+        self.view = view as! UIViewController
+    }
+}
+
+
+extension LevelsRouter: LevelsRouterContract {
+    
+    func navigateBackHomeMenu()
+    {
+        view.navigationController?.popToRootViewController(animated: true)
     }
 }

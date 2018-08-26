@@ -9,3 +9,6 @@
 "home_bar_title"                            = "Elige un área";
 "home_error_button"                         = "Aceptar";
 "home_error_message"                        = "Error al cargar los juegos";
+
+"level_levels_button_text"                  = "Nivel %d";
+"level_no_level_error_message"              = "Este juego no tiene contenido por ahora :(";
