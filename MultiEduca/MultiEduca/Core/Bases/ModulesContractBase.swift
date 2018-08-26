@@ -10,7 +10,7 @@ import Foundation
 
 
 protocol ViewContractBase {
-
+    func showAlert(title:String?, message:String?)
 }
 
 protocol PresenterContractBase {

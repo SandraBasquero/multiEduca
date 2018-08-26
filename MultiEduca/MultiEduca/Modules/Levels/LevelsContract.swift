@@ -10,10 +10,12 @@ import Foundation
 
 protocol LevelsViewContract:ViewContractBase {
     func prepareViews()
+    func setLevelsGame(levels:[Int])
 }
 
 protocol LevelsPresenterContract:PresenterContractBase {
-    
+    func getLevelsForGameId(_ id:String)
+    func goToHomeMenu()
 }
 
 protocol LevelsInteractorContract {
@@ -21,5 +23,5 @@ protocol LevelsInteractorContract {
 }
 
 protocol LevelsRouterContract {
-    
+    func navigateBackHomeMenu()
 }
