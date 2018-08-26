@@ -11,4 +11,5 @@ import Foundation
 protocol FilesManagerContract {
     
     func readHomeDataFile() -> [HomeDataModel]
+    func readGameContentDataFile() -> GameContentModel?
 }

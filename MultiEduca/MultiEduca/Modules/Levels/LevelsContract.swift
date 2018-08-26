@@ -13,9 +13,12 @@ protocol LevelsViewContract:ViewContractBase {
 }
 
 protocol LevelsPresenterContract:PresenterContractBase {
+    
 }
 
-
+protocol LevelsInteractorContract {
+    func getLevelsOfGame(gameId:String) -> [Int]?
+}
 
 protocol LevelsRouterContract {
     

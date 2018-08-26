@@ -18,7 +18,7 @@ enum ModuleType {
 
 class DependencyFactory {
     
-    static let storyboard = UIStoryboard(name: "Main", bundle: nil) // TODO: Provider ?
+    static let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
     static func createModule(type:ModuleType) -> UIViewController
     {
@@ -58,8 +58,10 @@ extension DependencyFactory: DependencyFactoryContract {
     {
         let view = storyboard.instantiateViewController(withIdentifier: "LevelsView") as! LevelsView
         view.setData(data: withData)
+        let provider:LevelsDataProviderContract = LevelsDataProvider(fileManager: FilesManager(), cache: GameContentCache.shared)
+        let interactor:LevelsInteractorContract = LevelsInteractor(provider: provider)
         let router:LevelsRouterContract = LevelsRouter(view: view as LevelsViewContract)
-        let presenter:LevelsPresenterContract = LevelsPresenter(view: view as LevelsViewContract, router: router)
+        let presenter:LevelsPresenterContract = LevelsPresenter(view: view as LevelsViewContract, router: router, interactor: interactor)
         view.presenter = presenter as? LevelsPresenter
         return view as LevelsViewContract
     }
