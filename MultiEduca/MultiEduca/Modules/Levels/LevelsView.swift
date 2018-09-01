@@ -80,8 +80,9 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
+        let cell = collectionView.cellForItem(at: indexPath) as! TitleCollectionViewCell
         if let gameId = sectionSelectedData?.id {
-            presenter.goToGame(gameId: gameId, levelId: presenter.getIdLevelOfIndex(indexPath.section, inGame: gameId))
+            presenter.goToGame(gameId: gameId, levelId: presenter.getIdLevelOfIndex(indexPath.section, inGame: gameId), title: cell.titleCell.text ?? "")
         }
     }
     

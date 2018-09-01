@@ -47,9 +47,9 @@ extension LevelsPresenter: LevelsPresenterContract {
     }
     
     
-    func goToGame(gameId: String, levelId: String)
+    func goToGame(gameId: String, levelId: String, title:String)
     {
-        router.navigateToGame(gameId: gameId, levelId: levelId)
+        router.navigateToGame(gameId: gameId, levelId: levelId, title: title)
     }
     
     

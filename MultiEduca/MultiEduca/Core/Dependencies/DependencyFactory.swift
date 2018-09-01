@@ -36,9 +36,9 @@ class DependencyFactory {
             typealias T = SectionCellViewModel
             return createLevelsModule(withData: data as! T) as! UIViewController
         case .GAME_TYPE:
-            typealias T = (String, String)
+            typealias T = (String, String, String)
             let dataGame = data as! T
-            return createGameAreaModule(gameId: dataGame.0, levelId: dataGame.1) as! UIViewController
+            return createGameAreaModule(gameId: dataGame.0, levelId: dataGame.1, title: dataGame.2) as! UIViewController
         }
     }
     
@@ -73,10 +73,10 @@ extension DependencyFactory: DependencyFactoryContract {
     }
     
     
-    internal static func createGameAreaModule(gameId: String, levelId: String) -> GameAreaContract
+    internal static func createGameAreaModule(gameId: String, levelId: String, title:String) -> GameAreaContract
     {
         let view = storyboard.instantiateViewController(withIdentifier: "GameAreaView") as! GameAreaView
-        view.setGameId(gameId, andLevelId: levelId)
+        view.setGameId(gameId, andLevelId: levelId, title: title)
         return view as GameAreaContract
     }
 }

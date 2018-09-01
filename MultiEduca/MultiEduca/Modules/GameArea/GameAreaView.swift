@@ -12,6 +12,7 @@ class GameAreaView: UIViewController {
     
     fileprivate var gameId:String?
     fileprivate var levelId:String?
+    fileprivate var barTitle:String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,10 +22,11 @@ class GameAreaView: UIViewController {
         print(levelId ?? "Nada")
     }
     
-    func setGameId(_ gameId:String, andLevelId:String)
+    func setGameId(_ gameId:String, andLevelId:String, title:String)
     {
         self.gameId = gameId
         self.levelId = andLevelId
+        self.barTitle = title
     }
     
 }
