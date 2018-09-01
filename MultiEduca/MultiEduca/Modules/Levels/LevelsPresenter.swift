@@ -41,6 +41,12 @@ extension LevelsPresenter: LevelsPresenterContract {
     }
     
     
+    func getIdLevelOfIndex(_ index: Int, inGame: String) -> String
+    {
+        return interactor.getIdLevelOfIndex(index, inGame: inGame)
+    }
+    
+    
     func goToGame(gameId: String, levelId: String)
     {
         router.navigateToGame(gameId: gameId, levelId: levelId)

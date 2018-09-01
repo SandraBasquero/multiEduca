@@ -22,7 +22,6 @@ final class LevelsInteractor {
 
 extension LevelsInteractor: LevelsInteractorContract {
     
-    
     func getLevelsOfGame(gameId: String) -> [Int]?
     {
         var data:[Int]?
@@ -38,5 +37,11 @@ extension LevelsInteractor: LevelsInteractorContract {
             }
         }
         return data
+    }
+    
+    
+    func getIdLevelOfIndex(_ index: Int, inGame: String) -> String
+    {
+        return provider.getLevelIdOfIndex(index, ofGame:inGame)
     }
 }

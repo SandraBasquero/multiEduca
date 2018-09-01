@@ -15,12 +15,14 @@ protocol LevelsViewContract:ViewContractBase {
 
 protocol LevelsPresenterContract:PresenterContractBase {
     func getLevelsForGameId(_ id:String)
+    func getIdLevelOfIndex(_ index:Int, inGame:String) -> String
     func goToGame(gameId:String, levelId:String)
     func goToHomeMenu()
 }
 
 protocol LevelsInteractorContract {
     func getLevelsOfGame(gameId:String) -> [Int]?
+    func getIdLevelOfIndex(_ index:Int, inGame:String) -> String
 }
 
 protocol LevelsRouterContract {

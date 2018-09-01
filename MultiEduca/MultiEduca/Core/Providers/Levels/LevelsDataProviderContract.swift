@@ -9,6 +9,6 @@
 import Foundation
 
 protocol LevelsDataProviderContract {
-    
     func getLevelsOfGame(id:String, completion:@escaping([Int]?,NSError?)->Void)
+    func getLevelIdOfIndex(_ index:Int, ofGame:String) -> String
 }

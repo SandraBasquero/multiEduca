@@ -80,9 +80,8 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        if let gameId = sectionSelectedData?.id, let levelId = levels?[indexPath.section] {
-            // TODO: create new function to get level id of selected item from cache...
-            presenter.goToGame(gameId: gameId, levelId: String(format: "l%d", levelId))
+        if let gameId = sectionSelectedData?.id {
+            presenter.goToGame(gameId: gameId, levelId: presenter.getIdLevelOfIndex(indexPath.section, inGame: gameId))
         }
     }
     
