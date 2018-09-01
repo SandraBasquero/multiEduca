@@ -13,4 +13,5 @@ protocol DependencyFactoryContract {
     
     static func createHomeModule() -> HomeViewContract
     static func createLevelsModule(withData:SectionCellViewModel) -> LevelsViewContract
+    static func createGameAreaModule(gameId:String, levelId:String) -> GameAreaContract
 }

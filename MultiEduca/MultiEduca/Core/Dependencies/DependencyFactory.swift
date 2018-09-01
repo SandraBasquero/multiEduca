@@ -13,6 +13,7 @@ import UIKit
 enum ModuleType {
     case HOME_TYPE
     case LEVELS_TYPE
+    case GAME_TYPE
 }
 
 
@@ -34,6 +35,10 @@ class DependencyFactory {
         case .LEVELS_TYPE:
             typealias T = SectionCellViewModel
             return createLevelsModule(withData: data as! T) as! UIViewController
+        case .GAME_TYPE:
+            typealias T = (String, String)
+            let dataGame = data as! T
+            return createGameAreaModule(gameId: dataGame.0, levelId: dataGame.1) as! UIViewController
         }
     }
     
@@ -41,6 +46,7 @@ class DependencyFactory {
 
 
 extension DependencyFactory: DependencyFactoryContract {
+    
 
     internal static func createHomeModule() -> HomeViewContract
     {
@@ -64,6 +70,14 @@ extension DependencyFactory: DependencyFactoryContract {
         let presenter:LevelsPresenterContract = LevelsPresenter(view: view as LevelsViewContract, router: router, interactor: interactor)
         view.presenter = presenter as? LevelsPresenter
         return view as LevelsViewContract
+    }
+    
+    
+    internal static func createGameAreaModule(gameId: String, levelId: String) -> GameAreaContract
+    {
+        let view = storyboard.instantiateViewController(withIdentifier: "GameAreaView") as! GameAreaView
+        view.setGameId(gameId, andLevelId: levelId)
+        return view as GameAreaContract
     }
 }
 

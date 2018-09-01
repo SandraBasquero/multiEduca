@@ -33,6 +33,8 @@
 		B64F4E19210B211B0006EE32 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = B64F4E18210B211B0006EE32 /* Home.json */; };
 		B64F4E1E210B2B8F0006EE32 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E1D210B2B8F0006EE32 /* HomeDataModel.swift */; };
 		B65764D221242DC60046F4A4 /* GameContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65764D121242DC60046F4A4 /* GameContentModel.swift */; };
+		B65B69FD213A91980027907F /* GameAreaContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B69FC213A91980027907F /* GameAreaContract.swift */; };
+		B65B69FF213A95E80027907F /* GameAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B69FE213A95E80027907F /* GameAreaView.swift */; };
 		B65BA45C210CC25A00425F73 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BA45B210CC25A00425F73 /* ViewControllerExtensions.swift */; };
 		B65BA45E210CC69A00425F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B65BA45D210CC69A00425F73 /* Localizable.strings */; };
 		B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EC205700C700A58172 /* AppDelegate.swift */; };
@@ -98,6 +100,8 @@
 		B64F4E18210B211B0006EE32 /* Home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
 		B64F4E1D210B2B8F0006EE32 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
 		B65764D121242DC60046F4A4 /* GameContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentModel.swift; sourceTree = "<group>"; };
+		B65B69FC213A91980027907F /* GameAreaContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaContract.swift; sourceTree = "<group>"; };
+		B65B69FE213A95E80027907F /* GameAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaView.swift; sourceTree = "<group>"; };
 		B65BA45B210CC25A00425F73 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		B65BA45D210CC69A00425F73 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B660E8E9205700C700A58172 /* MultiEduca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiEduca.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -270,6 +274,15 @@
 			path = Section;
 			sourceTree = "<group>";
 		};
+		B65B69FB213A90100027907F /* GameArea */ = {
+			isa = PBXGroup;
+			children = (
+				B65B69FC213A91980027907F /* GameAreaContract.swift */,
+				B65B69FE213A95E80027907F /* GameAreaView.swift */,
+			);
+			path = GameArea;
+			sourceTree = "<group>";
+		};
 		B660E8E0205700C700A58172 = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +395,7 @@
 			children = (
 				B6FA65EC205D9FEA00F551DC /* Home */,
 				B63668A920681E2300835547 /* Levels */,
+				B65B69FB213A90100027907F /* GameArea */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -639,6 +653,7 @@
 				B6377049206F765400DB2A73 /* SectionCell.swift in Sources */,
 				B660E8F5205700C700A58172 /* MultiEduca.xcdatamodeld in Sources */,
 				B64F4E14210B1B5B0006EE32 /* HomeDataCache.swift in Sources */,
+				B65B69FF213A95E80027907F /* GameAreaView.swift in Sources */,
 				B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */,
 				B63668AF2068236A00835547 /* LevelsPresenter.swift in Sources */,
 				B6377055206F7E2C00DB2A73 /* FilesManagerContract.swift in Sources */,
@@ -650,6 +665,7 @@
 				B637704F206F7D3F00DB2A73 /* HomeInteractor.swift in Sources */,
 				B609EA88213156B8000CE291 /* LevelsInteractor.swift in Sources */,
 				B6377052206F7DED00DB2A73 /* FilesManager.swift in Sources */,
+				B65B69FD213A91980027907F /* GameAreaContract.swift in Sources */,
 				B6720133210B8731003857AC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

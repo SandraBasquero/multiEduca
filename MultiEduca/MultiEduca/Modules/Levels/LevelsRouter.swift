@@ -21,6 +21,13 @@ class LevelsRouter {
 
 
 extension LevelsRouter: LevelsRouterContract {
+
+    func navigateToGame(gameId: String, levelId: String)
+    {
+        let gameView = DependencyFactory.createModuleWithData(type: .GAME_TYPE, data: (gameId, levelId))
+        view.navigationController?.pushViewController(gameView, animated: true)
+    }
+    
     
     func navigateBackHomeMenu()
     {

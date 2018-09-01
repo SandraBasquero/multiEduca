@@ -41,6 +41,12 @@ extension LevelsPresenter: LevelsPresenterContract {
     }
     
     
+    func goToGame(gameId: String, levelId: String)
+    {
+        router.navigateToGame(gameId: gameId, levelId: levelId)
+    }
+    
+    
     func goToHomeMenu()
     {
         router.navigateBackHomeMenu()
