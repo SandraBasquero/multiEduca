@@ -73,11 +73,16 @@ extension DependencyFactory: DependencyFactoryContract {
     }
     
     
-    internal static func createGameAreaModule(gameId: String, levelId: String, title:String) -> GameAreaContract
+    internal static func createGameAreaModule(gameId: String, levelId: String, title:String) -> GameAreaViewContract
     {
         let view = storyboard.instantiateViewController(withIdentifier: "GameAreaView") as! GameAreaView
         view.setGameId(gameId, andLevelId: levelId, title: title)
-        return view as GameAreaContract
+        //let provider
+        let interactor: GameAreaInteractorContract = GameAreaInteractor()
+        let router: GameAreaRouterContract = GameAreaRouter(view: view)
+        let presenter: GameAreaPresenterContract = GameAreaPresenter(view: view, router: router, interactor: interactor)
+        view.presenter = presenter as? GameAreaPresenter
+        return view as GameAreaViewContract
     }
 }
 

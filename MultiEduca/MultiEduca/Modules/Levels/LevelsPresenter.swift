@@ -11,9 +11,9 @@ import Foundation
 
 class LevelsPresenter {
 
-    var router:LevelsRouterContract
-    var view:LevelsViewContract
-    var interactor:LevelsInteractorContract
+    let router:LevelsRouterContract
+    let view:LevelsViewContract
+    let interactor:LevelsInteractorContract
     
     init(view:LevelsViewContract, router:LevelsRouterContract, interactor:LevelsInteractorContract) {
         self.view = view

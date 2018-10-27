@@ -21,8 +21,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     
     // MARK: - Live circle
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.start()
         if let id = sectionSelectedData?.id {

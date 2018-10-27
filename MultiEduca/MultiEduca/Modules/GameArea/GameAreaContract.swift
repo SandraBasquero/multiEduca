@@ -9,6 +9,18 @@
 import Foundation
 
 
-protocol GameAreaContract:ViewContractBase {
+protocol GameAreaViewContract:ViewContractBase {
+    func setupViews()
+}
+
+protocol GameAreaPresenterContract: PresenterContractBase {
+    
+}
+
+protocol GameAreaInteractorContract {
+    
+}
+
+protocol GameAreaRouterContract {
     
 }

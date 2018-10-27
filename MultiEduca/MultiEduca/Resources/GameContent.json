@@ -76,8 +76,8 @@
                         "points": 2
                     },
                     {
-                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: SUSTANTIVO - PREPOSICIÓN - SUSTANTIVO - CONJUNCIÓN - SUSTANTIVO",
-                        "answer": "Clases de violín y ukelele",
+                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: SUSTANTIVO - PREPOSICIÓN - SUSTANTIVO (fem.) - CONJUNCIÓN - SUSTANTIVO (masc.)",
+                        "answer": "Clases de trompeta y ukelele",
                         "points": 2
                     }
                 ]
