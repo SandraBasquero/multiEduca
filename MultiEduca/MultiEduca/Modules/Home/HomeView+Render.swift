@@ -23,6 +23,7 @@ extension HomeView {
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 15
         collectionView!.collectionViewLayout = layout
+        showHomeButtonOnNavigationBar(false)
     }
     
     

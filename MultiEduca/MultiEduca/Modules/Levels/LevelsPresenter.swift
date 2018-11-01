@@ -11,9 +11,9 @@ import Foundation
 
 class LevelsPresenter {
 
-    var router:LevelsRouterContract
-    var view:LevelsViewContract
-    var interactor:LevelsInteractorContract
+    let router:LevelsRouterContract
+    let view:LevelsViewContract
+    let interactor:LevelsInteractorContract
     
     init(view:LevelsViewContract, router:LevelsRouterContract, interactor:LevelsInteractorContract) {
         self.view = view
@@ -38,6 +38,18 @@ extension LevelsPresenter: LevelsPresenterContract {
         } else {
             view.showAlert(title: "", message: "level_no_level_error_message".localized)
         }
+    }
+    
+    
+    func getIdLevelOfIndex(_ index: Int, inGame: String) -> String
+    {
+        return interactor.getIdLevelOfIndex(index, inGame: inGame)
+    }
+    
+    
+    func goToGame(gameId: String, levelId: String, title:String)
+    {
+        router.navigateToGame(gameId: gameId, levelId: levelId, title: title)
     }
     
     

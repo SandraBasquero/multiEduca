@@ -52,4 +52,20 @@ extension LevelsDataProvider: LevelsDataProviderContract {
         error = levels == nil ? NSError() : error
         completion(levels, error)
     }
+    
+    
+    func getLevelIdOfIndex(_ index: Int, ofGame: String) -> String
+    {
+        var leveId = ""
+        if let gameData = cache.getAllData() {
+            gameData.forEach {
+                if $0.id == ofGame {
+                    if let id = $0.levels?[index].id {
+                        leveId = id
+                    }
+                }
+            }
+        }
+        return leveId
+    }
 }

@@ -13,6 +13,9 @@
 		B632FD1C20701454003157A5 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B632FD1B20701454003157A5 /* testImage.png */; };
 		B6348902206E971900044F18 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6348901206E971900044F18 /* BaseViewController.swift */; };
 		B6348904206EB4C300044F18 /* DependencyFactoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6348903206EB4C300044F18 /* DependencyFactoryContract.swift */; };
+		B6358E6B218461B600B653EE /* GameAreaPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6358E6A218461B600B653EE /* GameAreaPresenter.swift */; };
+		B6358E6D2184620F00B653EE /* GameAreaInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6358E6C2184620F00B653EE /* GameAreaInteractor.swift */; };
+		B6358E6F2184622100B653EE /* GameAreaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6358E6E2184622100B653EE /* GameAreaRouter.swift */; };
 		B63668AB20681E7900835547 /* LevelsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63668AA20681E7900835547 /* LevelsContract.swift */; };
 		B63668AD20681F3E00835547 /* LevelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63668AC20681F3E00835547 /* LevelsView.swift */; };
 		B63668AF2068236A00835547 /* LevelsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63668AE2068236A00835547 /* LevelsPresenter.swift */; };
@@ -28,11 +31,14 @@
 		B6403F772117600700FB927A /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6403F752117600700FB927A /* TitleCollectionViewCell.swift */; };
 		B6403F782117600700FB927A /* TitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6403F762117600700FB927A /* TitleCollectionViewCell.xib */; };
 		B64383B4212039F20085EE76 /* GameContent.json in Resources */ = {isa = PBXBuildFile; fileRef = B64383B3212039F20085EE76 /* GameContent.json */; };
+		B64DFEEC218B5EE500BF049A /* HomeNavigationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64DFEEB218B5EE500BF049A /* HomeNavigationBarButton.swift */; };
 		B64F4E14210B1B5B0006EE32 /* HomeDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E13210B1B5B0006EE32 /* HomeDataCache.swift */; };
 		B64F4E16210B1BFD0006EE32 /* HomeDataCacheContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */; };
 		B64F4E19210B211B0006EE32 /* Home.json in Resources */ = {isa = PBXBuildFile; fileRef = B64F4E18210B211B0006EE32 /* Home.json */; };
 		B64F4E1E210B2B8F0006EE32 /* HomeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E1D210B2B8F0006EE32 /* HomeDataModel.swift */; };
 		B65764D221242DC60046F4A4 /* GameContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65764D121242DC60046F4A4 /* GameContentModel.swift */; };
+		B65B69FD213A91980027907F /* GameAreaContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B69FC213A91980027907F /* GameAreaContract.swift */; };
+		B65B69FF213A95E80027907F /* GameAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65B69FE213A95E80027907F /* GameAreaView.swift */; };
 		B65BA45C210CC25A00425F73 /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65BA45B210CC25A00425F73 /* ViewControllerExtensions.swift */; };
 		B65BA45E210CC69A00425F73 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B65BA45D210CC69A00425F73 /* Localizable.strings */; };
 		B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E8EC205700C700A58172 /* AppDelegate.swift */; };
@@ -78,6 +84,9 @@
 		B632FD1B20701454003157A5 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		B6348901206E971900044F18 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B6348903206EB4C300044F18 /* DependencyFactoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactoryContract.swift; sourceTree = "<group>"; };
+		B6358E6A218461B600B653EE /* GameAreaPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaPresenter.swift; sourceTree = "<group>"; };
+		B6358E6C2184620F00B653EE /* GameAreaInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaInteractor.swift; sourceTree = "<group>"; };
+		B6358E6E2184622100B653EE /* GameAreaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaRouter.swift; sourceTree = "<group>"; };
 		B63668AA20681E7900835547 /* LevelsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsContract.swift; sourceTree = "<group>"; };
 		B63668AC20681F3E00835547 /* LevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsView.swift; sourceTree = "<group>"; };
 		B63668AE2068236A00835547 /* LevelsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsPresenter.swift; sourceTree = "<group>"; };
@@ -93,11 +102,14 @@
 		B6403F752117600700FB927A /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6403F762117600700FB927A /* TitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		B64383B3212039F20085EE76 /* GameContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GameContent.json; sourceTree = "<group>"; };
+		B64DFEEB218B5EE500BF049A /* HomeNavigationBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBarButton.swift; sourceTree = "<group>"; };
 		B64F4E13210B1B5B0006EE32 /* HomeDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataCache.swift; sourceTree = "<group>"; };
 		B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataCacheContract.swift; sourceTree = "<group>"; };
 		B64F4E18210B211B0006EE32 /* Home.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Home.json; sourceTree = "<group>"; };
 		B64F4E1D210B2B8F0006EE32 /* HomeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataModel.swift; sourceTree = "<group>"; };
 		B65764D121242DC60046F4A4 /* GameContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentModel.swift; sourceTree = "<group>"; };
+		B65B69FC213A91980027907F /* GameAreaContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaContract.swift; sourceTree = "<group>"; };
+		B65B69FE213A95E80027907F /* GameAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaView.swift; sourceTree = "<group>"; };
 		B65BA45B210CC25A00425F73 /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		B65BA45D210CC69A00425F73 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		B660E8E9205700C700A58172 /* MultiEduca.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiEduca.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +252,23 @@
 			path = OneText;
 			sourceTree = "<group>";
 		};
+		B64DFEE9218B5E2B00BF049A /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				B64DFEEB218B5EE500BF049A /* HomeNavigationBarButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B64DFEEA218B5E3A00BF049A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B637704B206F797A00DB2A73 /* Cells */,
+				B64DFEE9218B5E2B00BF049A /* Buttons */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B64F4E12210B1B2E0006EE32 /* Caches */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +299,18 @@
 			path = Section;
 			sourceTree = "<group>";
 		};
+		B65B69FB213A90100027907F /* GameArea */ = {
+			isa = PBXGroup;
+			children = (
+				B65B69FC213A91980027907F /* GameAreaContract.swift */,
+				B65B69FE213A95E80027907F /* GameAreaView.swift */,
+				B6358E6A218461B600B653EE /* GameAreaPresenter.swift */,
+				B6358E6C2184620F00B653EE /* GameAreaInteractor.swift */,
+				B6358E6E2184622100B653EE /* GameAreaRouter.swift */,
+			);
+			path = GameArea;
+			sourceTree = "<group>";
+		};
 		B660E8E0205700C700A58172 = {
 			isa = PBXGroup;
 			children = (
@@ -293,13 +334,13 @@
 		B660E8EB205700C700A58172 /* MultiEduca */ = {
 			isa = PBXGroup;
 			children = (
-				B64F4E17210B20C60006EE32 /* Resources */,
 				B632FD1B20701454003157A5 /* testImage.png */,
 				B660E8EC205700C700A58172 /* AppDelegate.swift */,
+				B64F4E17210B20C60006EE32 /* Resources */,
+				B64DFEEA218B5E3A00BF049A /* Components */,
 				B6FA65F6205DA9ED00F551DC /* Core */,
 				B6FA65ED205DA0B100F551DC /* Modules */,
 				B6377050206F7D7400DB2A73 /* Workers */,
-				B637704B206F797A00DB2A73 /* Cells */,
 				B660E8F0205700C700A58172 /* Main.storyboard */,
 				B660E8F6205700C700A58172 /* Assets.xcassets */,
 				B660E8F8205700C700A58172 /* LaunchScreen.storyboard */,
@@ -382,6 +423,7 @@
 			children = (
 				B6FA65EC205D9FEA00F551DC /* Home */,
 				B63668A920681E2300835547 /* Levels */,
+				B65B69FB213A90100027907F /* GameArea */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -619,6 +661,7 @@
 				B6348902206E971900044F18 /* BaseViewController.swift in Sources */,
 				B6FA65F5205DA34500F551DC /* HomeContract.swift in Sources */,
 				B69656792129CA32002A579C /* GameContentCacheContract.swift in Sources */,
+				B6358E6B218461B600B653EE /* GameAreaPresenter.swift in Sources */,
 				B637705B206F80D600DB2A73 /* HomeDataProviderContract.swift in Sources */,
 				B6403F772117600700FB927A /* TitleCollectionViewCell.swift in Sources */,
 				B69656802129D0B5002A579C /* LevelsDataProvider.swift in Sources */,
@@ -629,16 +672,19 @@
 				B63668AB20681E7900835547 /* LevelsContract.swift in Sources */,
 				B660E8EF205700C700A58172 /* HomeView.swift in Sources */,
 				B63668AD20681F3E00835547 /* LevelsView.swift in Sources */,
+				B6358E6D2184620F00B653EE /* GameAreaInteractor.swift in Sources */,
 				B637704D206F7B0900DB2A73 /* SectionCellViewModel.swift in Sources */,
 				B65764D221242DC60046F4A4 /* GameContentModel.swift in Sources */,
 				B65BA45C210CC25A00425F73 /* ViewControllerExtensions.swift in Sources */,
 				B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */,
+				B6358E6F2184622100B653EE /* GameAreaRouter.swift in Sources */,
 				B6377057206F806300DB2A73 /* HomeDataProvider.swift in Sources */,
 				B64F4E1E210B2B8F0006EE32 /* HomeDataModel.swift in Sources */,
 				B64F4E16210B1BFD0006EE32 /* HomeDataCacheContract.swift in Sources */,
 				B6377049206F765400DB2A73 /* SectionCell.swift in Sources */,
 				B660E8F5205700C700A58172 /* MultiEduca.xcdatamodeld in Sources */,
 				B64F4E14210B1B5B0006EE32 /* HomeDataCache.swift in Sources */,
+				B65B69FF213A95E80027907F /* GameAreaView.swift in Sources */,
 				B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */,
 				B63668AF2068236A00835547 /* LevelsPresenter.swift in Sources */,
 				B6377055206F7E2C00DB2A73 /* FilesManagerContract.swift in Sources */,
@@ -649,7 +695,9 @@
 				B6348904206EB4C300044F18 /* DependencyFactoryContract.swift in Sources */,
 				B637704F206F7D3F00DB2A73 /* HomeInteractor.swift in Sources */,
 				B609EA88213156B8000CE291 /* LevelsInteractor.swift in Sources */,
+				B64DFEEC218B5EE500BF049A /* HomeNavigationBarButton.swift in Sources */,
 				B6377052206F7DED00DB2A73 /* FilesManager.swift in Sources */,
+				B65B69FD213A91980027907F /* GameAreaContract.swift in Sources */,
 				B6720133210B8731003857AC /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

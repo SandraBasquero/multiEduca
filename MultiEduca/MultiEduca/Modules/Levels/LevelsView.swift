@@ -21,8 +21,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     
     // MARK: - Live circle
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.start()
         if let id = sectionSelectedData?.id {
@@ -80,7 +79,10 @@ class LevelsView: BaseViewController<LevelsPresenter>,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
-        
+        let cell = collectionView.cellForItem(at: indexPath) as! TitleCollectionViewCell
+        if let gameId = sectionSelectedData?.id {
+            presenter.goToGame(gameId: gameId, levelId: presenter.getIdLevelOfIndex(indexPath.section, inGame: gameId), title: cell.titleCell.text ?? "")
+        }
     }
     
     
@@ -131,6 +133,7 @@ extension LevelsView {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray, NSAttributedStringKey.font: UIFont(name: Constants.Styles.primaryFont, size: 22)!]
         TitleCollectionViewCell.registerCellForCollectionView(collectionView)
         setLayout()
+        showHomeButtonOnNavigationBar(false)
     }
     
     
