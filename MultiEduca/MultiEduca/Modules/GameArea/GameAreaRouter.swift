@@ -21,4 +21,7 @@ class GameAreaRouter {
 
 extension GameAreaRouter: GameAreaRouterContract {
     
+    func backToHomeMenu() {
+        view.navigationController?.popToRootViewController(animated: true)
+    }
 }

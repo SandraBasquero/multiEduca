@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameAreaView: BaseViewController<GameAreaPresenter> {
+class GameAreaView: BaseViewController<GameAreaPresenter>, BaseViewControllerDelegate {
     
     fileprivate var gameId:String?
     fileprivate var levelId:String?
@@ -25,6 +25,9 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
         self.barTitle = title
     }
     
+    func homeButtonPressed() {
+        presenter.backToHomeMenu()
+    }
 }
 
 
@@ -34,13 +37,8 @@ extension GameAreaView: GameAreaViewContract {
         self.view.backgroundColor = UIColor.yellow
         print(gameId ?? "Nada")
         print(levelId ?? "Nada")
-        
-        let btn1 = UIButton(type: .custom)
-        btn1.setImage(UIImage(named: "testImage"), for: .normal)
-        btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        //btn1.addTarget(self, action: #selector(Class.Methodname), for: .touchUpInside)
-        let item1 = UIBarButtonItem(customView: btn1)
-        navigationItem.setRightBarButtonItems([item1], animated: true)
+        showHomeButtonOnNavigationBar(true)
+        delegate = self
     }
     
     

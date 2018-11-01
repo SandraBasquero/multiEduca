@@ -14,7 +14,7 @@ protocol GameAreaViewContract:ViewContractBase {
 }
 
 protocol GameAreaPresenterContract: PresenterContractBase {
-    
+    func backToHomeMenu()
 }
 
 protocol GameAreaInteractorContract {
@@ -22,5 +22,5 @@ protocol GameAreaInteractorContract {
 }
 
 protocol GameAreaRouterContract {
-    
+    func backToHomeMenu()
 }

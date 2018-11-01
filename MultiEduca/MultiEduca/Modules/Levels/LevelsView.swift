@@ -133,6 +133,7 @@ extension LevelsView {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray, NSAttributedStringKey.font: UIFont(name: Constants.Styles.primaryFont, size: 22)!]
         TitleCollectionViewCell.registerCellForCollectionView(collectionView)
         setLayout()
+        showHomeButtonOnNavigationBar(false)
     }
     
     

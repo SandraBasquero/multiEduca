@@ -27,4 +27,8 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     func start() {
         view.setupViews()
     }
+    
+    func backToHomeMenu() {
+        router.backToHomeMenu()
+    }
 }
