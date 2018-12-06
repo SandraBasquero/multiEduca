@@ -77,8 +77,8 @@ extension DependencyFactory: DependencyFactoryContract {
     {
         let view = storyboard.instantiateViewController(withIdentifier: "GameAreaView") as! GameAreaView
         view.setGameId(gameId, andLevelId: levelId, title: title)
-        //let provider
-        let interactor: GameAreaInteractorContract = GameAreaInteractor()
+        let provider: ContentLevelProviderContract = ContentLevelProvider(cache: GameContentCache.shared)
+        let interactor: GameAreaInteractorContract = GameAreaInteractor(provider: provider)
         let router: GameAreaRouterContract = GameAreaRouter(view: view)
         let presenter: GameAreaPresenterContract = GameAreaPresenter(view: view, router: router, interactor: interactor)
         view.presenter = presenter as? GameAreaPresenter

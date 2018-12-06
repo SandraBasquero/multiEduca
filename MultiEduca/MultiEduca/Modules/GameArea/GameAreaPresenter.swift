@@ -23,12 +23,21 @@ final class GameAreaPresenter {
 
 
 extension GameAreaPresenter: GameAreaPresenterContract {
-    
+
     func start() {
         view.setupViews()
     }
     
     func backToHomeMenu() {
         router.backToHomeMenu()
+    }
+    
+    func getContent(gameId: String, levelId: String) {
+        let content = interactor.getContentLevel(gameId: gameId, levelId: levelId)
+        if content.count > 0 {
+            print(content)
+        } else {
+            print("Nothing")
+        }
     }
 }
