@@ -10,6 +10,7 @@
 		263AAFA6911431E03CFA8A58 /* Pods_MultiEducaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3BD989D2940B28982655FA /* Pods_MultiEducaTests.framework */; };
 		35DE6A48968C6FAD7F58D4A1 /* Pods_MultiEduca.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8426010CBA714AACAE022F4D /* Pods_MultiEduca.framework */; };
 		B609EA88213156B8000CE291 /* LevelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609EA87213156B8000CE291 /* LevelsInteractor.swift */; };
+		B62AC2C4218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AC2C3218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift */; };
 		B632FD1C20701454003157A5 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B632FD1B20701454003157A5 /* testImage.png */; };
 		B6348902206E971900044F18 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6348901206E971900044F18 /* BaseViewController.swift */; };
 		B6348904206EB4C300044F18 /* DependencyFactoryContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6348903206EB4C300044F18 /* DependencyFactoryContract.swift */; };
@@ -61,6 +62,8 @@
 		B6FA65F5205DA34500F551DC /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F4205DA34500F551DC /* HomeContract.swift */; };
 		B6FA65F8205DAD2600F551DC /* DependencyFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */; };
 		B6FA65FA205DB05B00F551DC /* ModulesContractBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FA65F9205DB05B00F551DC /* ModulesContractBase.swift */; };
+		B6FCEDF621A159A800A839BF /* ContentLevelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FCEDF521A159A800A839BF /* ContentLevelProvider.swift */; };
+		B6FCEDF821A1695000A839BF /* ContentProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FCEDF721A1695000A839BF /* ContentProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +84,7 @@
 		8273D24379F9BA6254C06056 /* Pods-MultiEduca.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiEduca.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiEduca/Pods-MultiEduca.debug.xcconfig"; sourceTree = "<group>"; };
 		8426010CBA714AACAE022F4D /* Pods_MultiEduca.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiEduca.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B609EA87213156B8000CE291 /* LevelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsInteractor.swift; sourceTree = "<group>"; };
+		B62AC2C3218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLevelProviderContract.swift; sourceTree = "<group>"; };
 		B632FD1B20701454003157A5 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		B6348901206E971900044F18 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B6348903206EB4C300044F18 /* DependencyFactoryContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactoryContract.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		B6FA65F4205DA34500F551DC /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
 		B6FA65F7205DAD2600F551DC /* DependencyFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyFactory.swift; sourceTree = "<group>"; };
 		B6FA65F9205DB05B00F551DC /* ModulesContractBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModulesContractBase.swift; sourceTree = "<group>"; };
+		B6FCEDF521A159A800A839BF /* ContentLevelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLevelProvider.swift; sourceTree = "<group>"; };
+		B6FCEDF721A1695000A839BF /* ContentProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,15 @@
 				1A3BD989D2940B28982655FA /* Pods_MultiEducaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B62AC2C2218EE1C700C3F5C9 /* ContentLevel */ = {
+			isa = PBXGroup;
+			children = (
+				B62AC2C3218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift */,
+				B6FCEDF521A159A800A839BF /* ContentLevelProvider.swift */,
+			);
+			path = ContentLevel;
 			sourceTree = "<group>";
 		};
 		B63488FE206E5CB700044F18 /* Bases */ = {
@@ -230,6 +245,7 @@
 			children = (
 				B6720130210B86F3003857AC /* Home */,
 				B696567C2129CE57002A579C /* Levels */,
+				B62AC2C2218EE1C700C3F5C9 /* ContentLevel */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -356,6 +372,7 @@
 				B660E904205700C700A58172 /* ReadFilesTests.swift */,
 				B6720134210B9ADE003857AC /* HomeDataTests.swift */,
 				B69656812129D9BC002A579C /* LevelsProviderTests.swift */,
+				B6FCEDF721A1695000A839BF /* ContentProviderTests.swift */,
 				B660E906205700C700A58172 /* Info.plist */,
 			);
 			path = MultiEducaTests;
@@ -679,6 +696,7 @@
 				B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */,
 				B6358E6F2184622100B653EE /* GameAreaRouter.swift in Sources */,
 				B6377057206F806300DB2A73 /* HomeDataProvider.swift in Sources */,
+				B6FCEDF621A159A800A839BF /* ContentLevelProvider.swift in Sources */,
 				B64F4E1E210B2B8F0006EE32 /* HomeDataModel.swift in Sources */,
 				B64F4E16210B1BFD0006EE32 /* HomeDataCacheContract.swift in Sources */,
 				B6377049206F765400DB2A73 /* SectionCell.swift in Sources */,
@@ -697,6 +715,7 @@
 				B609EA88213156B8000CE291 /* LevelsInteractor.swift in Sources */,
 				B64DFEEC218B5EE500BF049A /* HomeNavigationBarButton.swift in Sources */,
 				B6377052206F7DED00DB2A73 /* FilesManager.swift in Sources */,
+				B62AC2C4218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift in Sources */,
 				B65B69FD213A91980027907F /* GameAreaContract.swift in Sources */,
 				B6720133210B8731003857AC /* Constants.swift in Sources */,
 			);
@@ -708,6 +727,7 @@
 			files = (
 				B69656822129D9BC002A579C /* LevelsProviderTests.swift in Sources */,
 				B660E905205700C700A58172 /* ReadFilesTests.swift in Sources */,
+				B6FCEDF821A1695000A839BF /* ContentProviderTests.swift in Sources */,
 				B6720135210B9ADE003857AC /* HomeDataTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,8 +39,13 @@ extension GameAreaView: GameAreaViewContract {
         print(levelId ?? "Nada")
         showHomeButtonOnNavigationBar(true)
         delegate = self
+        
+        // Por aquí...
+        if let game = gameId, let level = levelId {
+            presenter.getContent(gameId: game, levelId: level)
+        }
     }
-    
+
     
     func showAlert(title: String?, message: String?) {
         

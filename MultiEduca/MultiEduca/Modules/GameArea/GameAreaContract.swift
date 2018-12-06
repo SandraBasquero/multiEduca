@@ -15,10 +15,11 @@ protocol GameAreaViewContract:ViewContractBase {
 
 protocol GameAreaPresenterContract: PresenterContractBase {
     func backToHomeMenu()
+    func getContent(gameId: String, levelId: String)
 }
 
 protocol GameAreaInteractorContract {
-    
+    func getContentLevel(gameId: String, levelId: String) -> [Content]
 }
 
 protocol GameAreaRouterContract {

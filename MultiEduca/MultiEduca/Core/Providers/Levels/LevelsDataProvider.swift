@@ -10,7 +10,6 @@ import Foundation
 
 
 class LevelsDataProvider {
-    
     var fileManager:FilesManagerContract
     var cache:GameContentCacheContract
     
