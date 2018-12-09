@@ -32,6 +32,9 @@
 		B6403F772117600700FB927A /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6403F752117600700FB927A /* TitleCollectionViewCell.swift */; };
 		B6403F782117600700FB927A /* TitleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6403F762117600700FB927A /* TitleCollectionViewCell.xib */; };
 		B64383B4212039F20085EE76 /* GameContent.json in Resources */ = {isa = PBXBuildFile; fileRef = B64383B3212039F20085EE76 /* GameContent.json */; };
+		B64462BA21BD869B00400844 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64462B921BD869B00400844 /* GameView.swift */; };
+		B64462BC21BD86AA00400844 /* GameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B64462BB21BD86AA00400844 /* GameView.xib */; };
+		B64462BE21BD8C2200400844 /* BasePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64462BD21BD8C2200400844 /* BasePageViewController.swift */; };
 		B64DFEEC218B5EE500BF049A /* HomeNavigationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64DFEEB218B5EE500BF049A /* HomeNavigationBarButton.swift */; };
 		B64F4E14210B1B5B0006EE32 /* HomeDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E13210B1B5B0006EE32 /* HomeDataCache.swift */; };
 		B64F4E16210B1BFD0006EE32 /* HomeDataCacheContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */; };
@@ -106,6 +109,9 @@
 		B6403F752117600700FB927A /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		B6403F762117600700FB927A /* TitleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCollectionViewCell.xib; sourceTree = "<group>"; };
 		B64383B3212039F20085EE76 /* GameContent.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GameContent.json; sourceTree = "<group>"; };
+		B64462B921BD869B00400844 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		B64462BB21BD86AA00400844 /* GameView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameView.xib; sourceTree = "<group>"; };
+		B64462BD21BD8C2200400844 /* BasePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePageViewController.swift; sourceTree = "<group>"; };
 		B64DFEEB218B5EE500BF049A /* HomeNavigationBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationBarButton.swift; sourceTree = "<group>"; };
 		B64F4E13210B1B5B0006EE32 /* HomeDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataCache.swift; sourceTree = "<group>"; };
 		B64F4E15210B1BFD0006EE32 /* HomeDataCacheContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataCacheContract.swift; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 			children = (
 				B6FA65F9205DB05B00F551DC /* ModulesContractBase.swift */,
 				B6348901206E971900044F18 /* BaseViewController.swift */,
+				B64462BD21BD8C2200400844 /* BasePageViewController.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -268,6 +275,15 @@
 			path = OneText;
 			sourceTree = "<group>";
 		};
+		B64462B821BD862800400844 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B64462B921BD869B00400844 /* GameView.swift */,
+				B64462BB21BD86AA00400844 /* GameView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B64DFEE9218B5E2B00BF049A /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,8 +295,9 @@
 		B64DFEEA218B5E3A00BF049A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B637704B206F797A00DB2A73 /* Cells */,
 				B64DFEE9218B5E2B00BF049A /* Buttons */,
+				B637704B206F797A00DB2A73 /* Cells */,
+				B64462B821BD862800400844 /* Views */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -554,6 +571,7 @@
 				B64F4E19210B211B0006EE32 /* Home.json in Resources */,
 				B660E8F2205700C700A58172 /* Main.storyboard in Resources */,
 				B64383B4212039F20085EE76 /* GameContent.json in Resources */,
+				B64462BC21BD86AA00400844 /* GameView.xib in Resources */,
 				B6403F782117600700FB927A /* TitleCollectionViewCell.xib in Resources */,
 				B632FD1C20701454003157A5 /* testImage.png in Resources */,
 			);
@@ -683,6 +701,7 @@
 				B6403F772117600700FB927A /* TitleCollectionViewCell.swift in Sources */,
 				B69656802129D0B5002A579C /* LevelsDataProvider.swift in Sources */,
 				B636C7632070DA1700D9C9A9 /* HomeView+Render.swift in Sources */,
+				B64462BE21BD8C2200400844 /* BasePageViewController.swift in Sources */,
 				B696567E2129CEAA002A579C /* LevelsDataProviderContract.swift in Sources */,
 				B63668B12068237B00835547 /* LevelsRouter.swift in Sources */,
 				B6E5FBA6210B4F170037D3A0 /* StringExtensions.swift in Sources */,
@@ -713,6 +732,7 @@
 				B6348904206EB4C300044F18 /* DependencyFactoryContract.swift in Sources */,
 				B637704F206F7D3F00DB2A73 /* HomeInteractor.swift in Sources */,
 				B609EA88213156B8000CE291 /* LevelsInteractor.swift in Sources */,
+				B64462BA21BD869B00400844 /* GameView.swift in Sources */,
 				B64DFEEC218B5EE500BF049A /* HomeNavigationBarButton.swift in Sources */,
 				B6377052206F7DED00DB2A73 /* FilesManager.swift in Sources */,
 				B62AC2C4218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift in Sources */,

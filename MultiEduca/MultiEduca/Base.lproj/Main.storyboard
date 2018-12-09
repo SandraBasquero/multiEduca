@@ -125,19 +125,12 @@
             <point key="canvasLocation" x="1156" y="34"/>
         </scene>
         <!--Game Area View-->
-        <scene sceneID="toG-f8-SC5">
+        <scene sceneID="ndF-ka-l0r">
             <objects>
-                <viewController storyboardIdentifier="GameAreaView" id="pcv-p8-bGO" customClass="GameAreaView" customModule="MultiEduca" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="gc0-ld-18i">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="6PY-uq-fFN"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kSZ-JN-RPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageViewController storyboardIdentifier="GameAreaView" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="RA0-v0-dEz" customClass="GameAreaView" customModule="MultiEduca" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipq-A3-3FQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1935" y="34"/>
+            <point key="canvasLocation" x="1929" y="34"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VU7-ae-ZHv">

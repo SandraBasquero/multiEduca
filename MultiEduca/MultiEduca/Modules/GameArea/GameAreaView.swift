@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameAreaView: BaseViewController<GameAreaPresenter>, BaseViewControllerDelegate {
+class GameAreaView: BasePageViewController<GameAreaPresenter>, BaseViewControllerDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     fileprivate var gameId:String?
     fileprivate var levelId:String?
@@ -28,6 +28,16 @@ class GameAreaView: BaseViewController<GameAreaPresenter>, BaseViewControllerDel
     func homeButtonPressed() {
         presenter.backToHomeMenu()
     }
+    
+    // MARK: - UIPageViewController Delegate and Data source
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return self
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return self
+    }
+    
 }
 
 
@@ -39,6 +49,7 @@ extension GameAreaView: GameAreaViewContract {
         print(levelId ?? "Nada")
         showHomeButtonOnNavigationBar(true)
         delegate = self
+        dataSource = self
         
         // Por aquí...
         if let game = gameId, let level = levelId {
