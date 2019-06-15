@@ -56,12 +56,12 @@
                 "id": "l1",
                 "contents": [
                     {
-                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: VERBO - SUSTANTIVO - ADJETIVO",
+                        "description": "Ordena las palabras siguiendo la siguiente regla: VERBO - SUSTANTIVO - ADJETIVO",
                         "answer": "Encontró manzanas verdes",
                         "points": 1
                     },
                     {
-                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: VERBO - DETERMINANTE - SUSTANTIVO",
+                        "description": "Ordena las palabras siguiendo la siguiente regla: VERBO - DETERMINANTE - SUSTANTIVO",
                         "answer": "Abriré la ventana",
                         "points": 1
                     }
@@ -71,12 +71,12 @@
                 "id": "l2",
                 "contents": [
                     {
-                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: DETERMINANTE - SUSTANTIVO - VERBO - ADJETIVO",
+                        "description": "Ordena las palabras siguiendo la siguiente regla: DETERMINANTE - SUSTANTIVO - VERBO - ADJETIVO",
                         "answer": "El águila vuela alto",
                         "points": 2
                     },
                     {
-                        "description": "Ordena las palabras para que la frase tenga sentido, siguiendo la siguiente regla: SUSTANTIVO - PREPOSICIÓN - SUSTANTIVO (fem.) - CONJUNCIÓN - SUSTANTIVO (masc.)",
+                        "description": "Ordena las palabras siguiendo la siguiente regla: SUSTANTIVO (fem. plur.) - PREPOSICIÓN - SUSTANTIVO (fem. sing.) - CONJUNCIÓN - SUSTANTIVO (masc. sing.)",
                         "answer": "Clases de trompeta y ukelele",
                         "points": 2
                     }
