@@ -92,7 +92,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
         let totalCellWidth =  (Int(self.collectionView.frame.width)/2)
         let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth))
         let rightInset = leftInset
-        return UIEdgeInsetsMake(25, leftInset, 0, rightInset)
+        return UIEdgeInsets.init(top: 25, left: leftInset, bottom: 0, right: rightInset)
     }
 }
 
@@ -130,7 +130,7 @@ extension LevelsView {
         self.navigationItem.title = sectionSelectedData?.name.uppercased()
         self.navigationController?.navigationBar.topItem?.title = ""
         self.navigationController?.navigationBar.tintColor = UIColor.darkGray
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray, NSAttributedStringKey.font: UIFont(name: Constants.Styles.primaryFont, size: 22)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.darkGray, NSAttributedString.Key.font: UIFont(name: Constants.Styles.primaryFont, size: 22)!]
         TitleCollectionViewCell.registerCellForCollectionView(collectionView)
         setLayout()
         showHomeButtonOnNavigationBar(false)

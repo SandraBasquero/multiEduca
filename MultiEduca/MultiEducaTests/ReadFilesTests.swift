@@ -28,7 +28,7 @@ class ReadFilesTests: XCTestCase {
         let fileManager = FilesManager()
         let model = fileManager.readGameContentDataFile()
         
-       print(model)
+        print(model as Any)
         
         XCTAssertNotNil(model)
         XCTAssertTrue(model?.first?.levels?.first?.contents?.first?.points == 1)
