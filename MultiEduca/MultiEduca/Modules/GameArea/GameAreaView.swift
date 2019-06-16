@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameAreaView: BasePageViewController<GameAreaPresenter>, BaseViewControllerDelegate, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+class GameAreaView: BasePageViewController<GameAreaPresenter> {
     
     fileprivate var gameId:String?
     fileprivate var levelId:String?
@@ -24,27 +24,12 @@ class GameAreaView: BasePageViewController<GameAreaPresenter>, BaseViewControlle
         self.levelId = andLevelId
         self.barTitle = title
     }
-    
-    func homeButtonPressed() {
-        presenter.backToHomeMenu()
-    }
-    
-    // MARK: - UIPageViewController Delegate and Data source
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return self
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self
-    }
-    
 }
 
-
+// MARK: - GameAreaViewContract
 extension GameAreaView: GameAreaViewContract {
     
     func setupViews() {
-        self.view.backgroundColor = UIColor.yellow
         print(gameId ?? "Nada")
         print(levelId ?? "Nada")
         showHomeButtonOnNavigationBar(true)
@@ -57,8 +42,27 @@ extension GameAreaView: GameAreaViewContract {
         }
     }
 
-    
     func showAlert(title: String?, message: String?) {
         
+    }
+}
+
+// MARK: - BaseViewControllerDelegate
+extension GameAreaView: BaseViewControllerDelegate {
+    
+    func homeButtonPressed() {
+        presenter.backToHomeMenu()
+    }
+}
+
+// MARK: - UIPageViewController Delegate and Data source
+extension GameAreaView: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        return self
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        return self
     }
 }

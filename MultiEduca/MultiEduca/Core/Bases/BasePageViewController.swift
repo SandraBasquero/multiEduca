@@ -20,6 +20,7 @@ class BasePageViewController<P: PresenterContractBase>: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
         let homeButton = HomeNavigationBarButton.instantiate()
         homeBarButton = UIBarButtonItem(customView: homeButton)
         homeButton.addTarget(self, action: #selector(baseDelegate?.homeButtonPressed), for: .touchUpInside)
