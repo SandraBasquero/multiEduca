@@ -43,7 +43,12 @@
                     {
                         "description": "Ordena los elementos de forma correcta:",
                         "answer": "25 X 3 = 75",
-                        "points": 2
+                        "points": 3
+                    },
+                    {
+                        "description": "Ordena los elementos de forma correcta:",
+                        "answer": "12 X 2 = 24",
+                        "points": 3
                     }
                 ]
             }

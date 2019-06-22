@@ -8,6 +8,8 @@
 
 import UIKit
 
+// FIXME: Remove this class if not used
+
 @objc protocol BasePageViewControllerDelegate: class {
     @objc func homeButtonPressed()
 }

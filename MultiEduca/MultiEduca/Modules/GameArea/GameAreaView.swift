@@ -8,7 +8,9 @@
 
 import UIKit
 
-class GameAreaView: BasePageViewController<GameAreaPresenter> {
+class GameAreaView: BaseViewController<GameAreaPresenter> {
+    
+    @IBOutlet weak var pageControl: UIPageControl!
     
     fileprivate var gameId:String?
     fileprivate var levelId:String?
@@ -24,6 +26,8 @@ class GameAreaView: BasePageViewController<GameAreaPresenter> {
         self.levelId = andLevelId
         self.barTitle = title
     }
+    
+    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {}
 }
 
 // MARK: - GameAreaViewContract
@@ -33,17 +37,17 @@ extension GameAreaView: GameAreaViewContract {
         print(gameId ?? "Nada")
         print(levelId ?? "Nada")
         showHomeButtonOnNavigationBar(true)
-        delegate = self
-        dataSource = self
-        
-        // Por aquí...
         if let game = gameId, let level = levelId {
+            pageControl.numberOfPages = presenter.getTotalQuestions(gameId: game, levelId: level)
+            pageControl.currentPage = 0
             presenter.getContent(gameId: game, levelId: level)
         }
     }
-
+    
     func showAlert(title: String?, message: String?) {
-        
+        self.showSimpleAlert(title: title, message: message, buttonText: "home_error_button".localized) { _ in
+            self.presenter.backToLevelScreen()
+        }
     }
 }
 
@@ -52,17 +56,5 @@ extension GameAreaView: BaseViewControllerDelegate {
     
     func homeButtonPressed() {
         presenter.backToHomeMenu()
-    }
-}
-
-// MARK: - UIPageViewController Delegate and Data source
-extension GameAreaView: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return self
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return self
     }
 }

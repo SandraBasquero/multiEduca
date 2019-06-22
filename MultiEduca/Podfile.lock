@@ -1,12 +1,15 @@
 PODS:
+  - KDDragAndDropCollectionViews (1.5.1)
   - ObjectMapper (3.5.0)
 
 DEPENDENCIES:
+  - KDDragAndDropCollectionViews
   - ObjectMapper (= 3.5.0)
 
 SPEC CHECKSUMS:
+  KDDragAndDropCollectionViews: 96ffdc53d3e06d359110485f04c16cdfd7b13e4b
   ObjectMapper: 078b564ed25c6578b62588e306bf1da3924636d4
 
-PODFILE CHECKSUM: ba04cc897f069241e3a802c4d23db52553834972
+PODFILE CHECKSUM: 2df415b8dd3ec6955946e57f4efbb56f84d980b8
 
 COCOAPODS: 1.4.0

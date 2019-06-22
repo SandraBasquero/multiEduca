@@ -16,12 +16,16 @@ protocol GameAreaViewContract:ViewContractBase {
 protocol GameAreaPresenterContract: PresenterContractBase {
     func backToHomeMenu()
     func getContent(gameId: String, levelId: String)
+    func getTotalQuestions(gameId: String, levelId: String) -> Int
+    func backToLevelScreen()
 }
 
 protocol GameAreaInteractorContract {
     func getContentLevel(gameId: String, levelId: String) -> [Content]
+    func getQuestionsLevelTotalNumber(gameId: String, levelId: String) -> Int
 }
 
 protocol GameAreaRouterContract {
     func backToHomeMenu()
+    func backToLevels()
 }

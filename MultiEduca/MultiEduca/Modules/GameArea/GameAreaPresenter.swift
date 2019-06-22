@@ -40,4 +40,16 @@ extension GameAreaPresenter: GameAreaPresenterContract {
             print("Nothing")
         }
     }
+    
+    func getTotalQuestions(gameId: String, levelId: String) -> Int {
+        let totalQuestion = interactor.getQuestionsLevelTotalNumber(gameId: gameId, levelId: levelId)
+        if totalQuestion == 0 {
+            view.showAlert(title: "", message: "level_no_content_error_message".localized)
+        }
+        return totalQuestion
+    }
+    
+    func backToLevelScreen() {
+        router.backToLevels()
+    }
 }

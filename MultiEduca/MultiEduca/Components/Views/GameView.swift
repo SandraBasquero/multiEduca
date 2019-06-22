@@ -8,6 +8,8 @@
 
 import UIKit
 
+// FIXME: Remove this class if not used
+
 protocol GameViewProtocol: class {
     // View actions to connect to GameAreaView...
 }

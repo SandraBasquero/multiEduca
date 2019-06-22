@@ -6,6 +6,7 @@ target 'MultiEduca' do
   use_frameworks!
 
   pod 'ObjectMapper', '3.5.0'
+  pod 'KDDragAndDropCollectionViews'
 
   target 'MultiEducaTests' do
     inherit! :search_paths
