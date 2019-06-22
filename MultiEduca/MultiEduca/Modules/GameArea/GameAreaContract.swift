@@ -11,6 +11,7 @@ import Foundation
 
 protocol GameAreaViewContract:ViewContractBase {
     func setupViews()
+    func renderState(_ currentState: GameState)
 }
 
 protocol GameAreaPresenterContract: PresenterContractBase {

@@ -28,14 +28,19 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     }
     
     override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {}
+    
+    // MARK: States private implementation
+    fileprivate func renderErrorState(message: String) {
+        self.showSimpleAlert(title: title, message: message, buttonText: "home_error_button".localized) { _ in
+            self.presenter.backToLevelScreen()
+        }
+    }
 }
 
 // MARK: - GameAreaViewContract
 extension GameAreaView: GameAreaViewContract {
     
     func setupViews() {
-        print(gameId ?? "Nada")
-        print(levelId ?? "Nada")
         showHomeButtonOnNavigationBar(true)
         if let game = gameId, let level = levelId {
             pageControl.numberOfPages = presenter.getTotalQuestions(gameId: game, levelId: level)
@@ -44,9 +49,17 @@ extension GameAreaView: GameAreaViewContract {
         }
     }
     
-    func showAlert(title: String?, message: String?) {
-        self.showSimpleAlert(title: title, message: message, buttonText: "home_error_button".localized) { _ in
-            self.presenter.backToLevelScreen()
+    //Required by ViewContractBase protocol, but not used because of the states implementation
+    func showAlert(title: String?, message: String?) {}
+    
+    func renderState(_ currentState: GameState) {
+        switch currentState {
+        case .renderData(let data):
+            print(data)
+        case .error(let message):
+            renderErrorState(message: message)
+        case .loading:
+            print("Loading...")
         }
     }
 }
