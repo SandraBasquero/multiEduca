@@ -98,7 +98,7 @@ class LevelsView: BaseViewController<LevelsPresenter>,
 
 
 // MARK: - LevelsViewContract
-extension LevelsView:LevelsViewContract {
+extension LevelsView: LevelsViewContract {
     
     func prepareViews()
     {
