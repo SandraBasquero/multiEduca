@@ -19,7 +19,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     fileprivate var levelId: String?
     fileprivate var barTitle: String?
     var dragAndDropManager : KDDragAndDropManager?
-    fileprivate var gameData: [OneTextGameCellViewModel]? = [OneTextGameCellViewModel(title: "Mock 1", index: 1), OneTextGameCellViewModel(title: "Mock 2", index: 2), OneTextGameCellViewModel(title: "Mock 3", index: 3)]
+    fileprivate var gameData: [OneTextGameCellViewModel]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +63,7 @@ extension GameAreaView: GameAreaViewContract {
         switch currentState {
         case .renderData(let data):
             print(data)
+            gameData = data
         case .error(let message):
             renderErrorState(message: message)
         case .loading:
@@ -71,7 +72,7 @@ extension GameAreaView: GameAreaViewContract {
     }
 }
 
-// MARK : UICollectionViewDataSource
+// MARK: - UICollectionViewDataSource
 extension GameAreaView {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -81,7 +82,6 @@ extension GameAreaView {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OneTextGameCellCollectionViewCell.identifier, for: indexPath) as! OneTextGameCellCollectionViewCell
         cell.setData(text: gameData?[indexPath.item].title ?? "")
-        
         cell.isHidden = false
         if let kdCollectionView = collectionView as? KDDragAndDropCollectionView {
             if let draggingPathOfCellBeingDragged = kdCollectionView.draggingPathOfCellBeingDragged {
@@ -94,6 +94,7 @@ extension GameAreaView {
     }
 }
 
+// MARK: - KDDragAndDropCollectionViewDataSource
 extension GameAreaView: KDDragAndDropCollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellIsDroppableAtIndexPath indexPath: IndexPath) -> Bool {
@@ -115,9 +116,10 @@ extension GameAreaView: KDDragAndDropCollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, moveDataItemFromIndexPath from: IndexPath, toIndexPath to: IndexPath) {
-        let from: OneTextGameCellViewModel = (gameData?[from.item])!
-        gameData?.remove(at: from.index)
-        gameData?.insert(from, at: to.item)
+        let fromData: OneTextGameCellViewModel = (gameData?[from.item])!
+        gameData?.remove(at: from.item)
+        gameData?.insert(fromData, at: to.item)
+        print(gameData) //Check sort here!
     }
 
     func collectionView(_ collectionView: UICollectionView, dataItemForIndexPath indexPath: IndexPath) -> AnyObject {

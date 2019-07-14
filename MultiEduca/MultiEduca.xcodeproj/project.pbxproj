@@ -10,6 +10,7 @@
 		263AAFA6911431E03CFA8A58 /* Pods_MultiEducaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3BD989D2940B28982655FA /* Pods_MultiEducaTests.framework */; };
 		35DE6A48968C6FAD7F58D4A1 /* Pods_MultiEduca.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8426010CBA714AACAE022F4D /* Pods_MultiEduca.framework */; };
 		B609EA88213156B8000CE291 /* LevelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609EA87213156B8000CE291 /* LevelsInteractor.swift */; };
+		B624163D22DB154400B383DD /* GameAreaViewModelsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624163C22DB154400B383DD /* GameAreaViewModelsMapper.swift */; };
 		B62AC2C4218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AC2C3218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift */; };
 		B632FD1C20701454003157A5 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B632FD1B20701454003157A5 /* testImage.png */; };
 		B6348902206E971900044F18 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6348901206E971900044F18 /* BaseViewController.swift */; };
@@ -90,6 +91,7 @@
 		8273D24379F9BA6254C06056 /* Pods-MultiEduca.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiEduca.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiEduca/Pods-MultiEduca.debug.xcconfig"; sourceTree = "<group>"; };
 		8426010CBA714AACAE022F4D /* Pods_MultiEduca.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiEduca.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B609EA87213156B8000CE291 /* LevelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsInteractor.swift; sourceTree = "<group>"; };
+		B624163C22DB154400B383DD /* GameAreaViewModelsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaViewModelsMapper.swift; sourceTree = "<group>"; };
 		B62AC2C3218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLevelProviderContract.swift; sourceTree = "<group>"; };
 		B632FD1B20701454003157A5 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		B6348901206E971900044F18 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,14 @@
 				1A3BD989D2940B28982655FA /* Pods_MultiEducaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B624163B22DB152000B383DD /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				B624163C22DB154400B383DD /* GameAreaViewModelsMapper.swift */,
+			);
+			path = Mappers;
 			sourceTree = "<group>";
 		};
 		B62AC2C2218EE1C700C3F5C9 /* ContentLevel */ = {
@@ -342,6 +352,7 @@
 		B65B69FB213A90100027907F /* GameArea */ = {
 			isa = PBXGroup;
 			children = (
+				B624163B22DB152000B383DD /* Mappers */,
 				B6D6FEB422D8F673003F60B5 /* ViewModels */,
 				B65B69FC213A91980027907F /* GameAreaContract.swift */,
 				B65B69FE213A95E80027907F /* GameAreaView.swift */,
@@ -755,6 +766,7 @@
 				B65B69FF213A95E80027907F /* GameAreaView.swift in Sources */,
 				B6FA65F1205DA30800F551DC /* HomePresenter.swift in Sources */,
 				B63668AF2068236A00835547 /* LevelsPresenter.swift in Sources */,
+				B624163D22DB154400B383DD /* GameAreaViewModelsMapper.swift in Sources */,
 				B6377055206F7E2C00DB2A73 /* FilesManagerContract.swift in Sources */,
 				B6FA65F8205DAD2600F551DC /* DependencyFactory.swift in Sources */,
 				B6FA65FA205DB05B00F551DC /* ModulesContractBase.swift in Sources */,

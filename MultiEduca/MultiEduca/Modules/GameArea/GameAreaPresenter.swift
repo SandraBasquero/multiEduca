@@ -9,7 +9,7 @@
 import Foundation
 
 enum GameState {
-    case renderData(_ data: String) // Replace String by view model
+    case renderData(_ data: [OneTextGameCellViewModel])
     case error(messageError: String)
     case loading
 }
@@ -52,8 +52,8 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     func getContent(gameId: String, levelId: String) {
         let content = interactor.getContentLevel(gameId: gameId, levelId: levelId)
         if content.count > 0 {
-            print(content)
-            //render data state
+            print(content);
+            setState(.renderData(GameAreaViewModelsMapper.answerToOneTextGameCellViewModel(content.first?.answer ?? "")))
         } else {
             setState(.error(messageError: "level_no_content_error_message".localized))
         }
