@@ -210,8 +210,10 @@
                         <viewLayoutGuide key="safeArea" id="8Eb-zg-8Hf"/>
                     </view>
                     <connections>
+                        <outlet property="bottomButton" destination="n2L-sF-OLa" id="9Vk-Fl-rtw"/>
                         <outlet property="pageControl" destination="z1h-TB-rJi" id="kMC-mf-ZOk"/>
                         <outlet property="playgroundCollectionView" destination="on6-o4-X7M" id="Q8Y-Tp-TwN"/>
+                        <outlet property="text" destination="lmt-7G-mSs" id="HTD-7m-mRG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VjW-PF-u2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>

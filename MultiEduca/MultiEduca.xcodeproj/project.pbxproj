@@ -11,6 +11,7 @@
 		35DE6A48968C6FAD7F58D4A1 /* Pods_MultiEduca.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8426010CBA714AACAE022F4D /* Pods_MultiEduca.framework */; };
 		B609EA88213156B8000CE291 /* LevelsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609EA87213156B8000CE291 /* LevelsInteractor.swift */; };
 		B624163D22DB154400B383DD /* GameAreaViewModelsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624163C22DB154400B383DD /* GameAreaViewModelsMapper.swift */; };
+		B624163F22DB844500B383DD /* GameAreaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B624163E22DB844500B383DD /* GameAreaViewModel.swift */; };
 		B62AC2C4218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62AC2C3218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift */; };
 		B632FD1C20701454003157A5 /* testImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B632FD1B20701454003157A5 /* testImage.png */; };
 		B6348902206E971900044F18 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6348901206E971900044F18 /* BaseViewController.swift */; };
@@ -92,6 +93,7 @@
 		8426010CBA714AACAE022F4D /* Pods_MultiEduca.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiEduca.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B609EA87213156B8000CE291 /* LevelsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsInteractor.swift; sourceTree = "<group>"; };
 		B624163C22DB154400B383DD /* GameAreaViewModelsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaViewModelsMapper.swift; sourceTree = "<group>"; };
+		B624163E22DB844500B383DD /* GameAreaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAreaViewModel.swift; sourceTree = "<group>"; };
 		B62AC2C3218EE2FC00C3F5C9 /* ContentLevelProviderContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLevelProviderContract.swift; sourceTree = "<group>"; };
 		B632FD1B20701454003157A5 /* testImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testImage.png; sourceTree = "<group>"; };
 		B6348901206E971900044F18 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -352,7 +354,6 @@
 		B65B69FB213A90100027907F /* GameArea */ = {
 			isa = PBXGroup;
 			children = (
-				B624163B22DB152000B383DD /* Mappers */,
 				B6D6FEB422D8F673003F60B5 /* ViewModels */,
 				B65B69FC213A91980027907F /* GameAreaContract.swift */,
 				B65B69FE213A95E80027907F /* GameAreaView.swift */,
@@ -461,7 +462,9 @@
 		B6D6FEB422D8F673003F60B5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				B624163B22DB152000B383DD /* Mappers */,
 				B6D6FEB222D8F662003F60B5 /* OneTextGameCellViewModel.swift */,
+				B624163E22DB844500B383DD /* GameAreaViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				B63668AD20681F3E00835547 /* LevelsView.swift in Sources */,
 				B6358E6D2184620F00B653EE /* GameAreaInteractor.swift in Sources */,
 				B637704D206F7B0900DB2A73 /* SectionCellViewModel.swift in Sources */,
+				B624163F22DB844500B383DD /* GameAreaViewModel.swift in Sources */,
 				B65764D221242DC60046F4A4 /* GameContentModel.swift in Sources */,
 				B65BA45C210CC25A00425F73 /* ViewControllerExtensions.swift in Sources */,
 				B660E8ED205700C700A58172 /* AppDelegate.swift in Sources */,

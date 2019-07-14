@@ -14,6 +14,8 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var playgroundCollectionView: KDDragAndDropCollectionView!
+    @IBOutlet weak var text: UILabel!
+    @IBOutlet weak var bottomButton: UIButton!
     
     fileprivate var gameId: String?
     fileprivate var levelId: String?
@@ -35,6 +37,11 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {}
     
     // MARK: States private implementation
+    fileprivate func renderDataState(data: GameAreaViewModel) {
+        self.text.text = data.text
+        self.gameData = data.game
+    }
+    
     fileprivate func renderErrorState(message: String) {
         self.showSimpleAlert(title: title, message: message, buttonText: "home_error_button".localized) { _ in
             self.presenter.backToLevelScreen()
@@ -62,8 +69,7 @@ extension GameAreaView: GameAreaViewContract {
     func renderState(_ currentState: GameState) {
         switch currentState {
         case .renderData(let data):
-            print(data)
-            gameData = data
+            renderDataState(data: data)
         case .error(let message):
             renderErrorState(message: message)
         case .loading:
