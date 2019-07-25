@@ -16,6 +16,11 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     @IBOutlet weak var playgroundCollectionView: KDDragAndDropCollectionView!
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var bottomButton: UIButton!
+    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
+        didSet {
+            collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+    }
     
     fileprivate var gameId: String?
     fileprivate var levelId: String?
@@ -38,8 +43,9 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     
     // MARK: States private implementation
     fileprivate func renderDataState(data: GameAreaViewModel) {
-        self.text.text = data.text
-        self.gameData = data.game
+        text.text = data.text
+        gameData = data.game
+        pageControl.currentPage = data.currentGamePlaying
     }
     
     fileprivate func renderErrorState(message: String) {
@@ -56,7 +62,6 @@ extension GameAreaView: GameAreaViewContract {
         showHomeButtonOnNavigationBar(true)
         if let game = gameId, let level = levelId {
             pageControl.numberOfPages = presenter.getTotalQuestions(gameId: game, levelId: level)
-            pageControl.currentPage = 0
             presenter.getContent(gameId: game, levelId: level)
         }
         OneTextGameCellCollectionViewCell.registerCellForCollectionView(playgroundCollectionView)
@@ -88,6 +93,7 @@ extension GameAreaView {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OneTextGameCellCollectionViewCell.identifier, for: indexPath) as! OneTextGameCellCollectionViewCell
         cell.setData(text: gameData?[indexPath.item].title ?? "")
+        cell.maxWidth = collectionView.bounds.width - 20
         cell.isHidden = false
         if let kdCollectionView = collectionView as? KDDragAndDropCollectionView {
             if let draggingPathOfCellBeingDragged = kdCollectionView.draggingPathOfCellBeingDragged {
@@ -141,7 +147,6 @@ extension GameAreaView: KDDragAndDropCollectionViewDataSource {
         return nil
     }
 }
-
 
 
 // MARK: - BaseViewControllerDelegate

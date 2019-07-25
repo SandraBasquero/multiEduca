@@ -53,7 +53,6 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     func getContent(gameId: String, levelId: String) {
         let content = interactor.getContentLevel(gameId: gameId, levelId: levelId)
         if content.count > 0  {
-            print(content);
             let viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
             setState(.renderData(viewModel))
         } else {

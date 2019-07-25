@@ -21,7 +21,7 @@ final class GameAreaViewModelsMapper {
         let characters = text.components(separatedBy: " ")
         var cells = [OneTextGameCellViewModel]()
         for i in 0...characters.count - 1 {
-            cells.append(OneTextGameCellViewModel(title: characters[i], index: i))
+            cells.append(OneTextGameCellViewModel(title: characters[i].uppercased(), index: i))
         }
         return cells
     }
