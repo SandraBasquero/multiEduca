@@ -148,6 +148,17 @@ extension GameAreaView: KDDragAndDropCollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+extension GameAreaView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        let totalCellWidth = collectionView.bounds.width //- 10
+//        let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth))
+//        let rightInset = leftInset
+        let totalHeight = collectionView.bounds.height
+        return UIEdgeInsets.init(top: (totalHeight/2) - 50, left: 0, bottom: 0, right: 0)
+    }
+}
 
 // MARK: - BaseViewControllerDelegate
 extension GameAreaView: BaseViewControllerDelegate {

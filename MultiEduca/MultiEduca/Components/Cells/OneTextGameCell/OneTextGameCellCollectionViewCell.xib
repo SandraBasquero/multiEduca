@@ -29,7 +29,7 @@
                     </label>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="1" green="0.26773775360000002" blue="0.84090841780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="lFT-33-GUD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="616-NC-lSP"/>
                 <constraint firstItem="lFT-33-GUD" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="TvJ-kk-qMl"/>

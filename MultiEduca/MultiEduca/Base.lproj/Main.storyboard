@@ -135,7 +135,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="on6-o4-X7M" customClass="KDDragAndDropCollectionView" customModule="KDDragAndDropCollectionViews">
                                 <rect key="frame" x="10" y="80.5" width="355" height="419"/>
-                                <color key="backgroundColor" red="1" green="0.94835773479999996" blue="0.3594041503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="25" id="DRc-ru-Eoz">
                                     <size key="itemSize" width="90" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -165,7 +165,7 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="257" text="Label " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmt-7G-mSs">
                                 <rect key="frame" x="20" y="40" width="335" height="20.5"/>
-                                <color key="backgroundColor" red="1" green="0.63591890679999996" blue="0.2156199691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
