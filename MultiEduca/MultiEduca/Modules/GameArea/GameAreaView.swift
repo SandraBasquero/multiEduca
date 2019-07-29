@@ -16,11 +16,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     @IBOutlet weak var playgroundCollectionView: KDDragAndDropCollectionView!
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var bottomButton: UIButton!
-    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout! {
-        didSet {
-            collectionLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
-    }
+    @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout!
     
     fileprivate var gameId: String?
     fileprivate var levelId: String?
@@ -33,19 +29,27 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
         presenter.start()
     }
     
+    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {}
+    
+    override func viewWillLayoutSubviews() {
+       
+    }
+    
     func setGameId(_ gameId:String, andLevelId:String, title:String) {
         self.gameId = gameId
         self.levelId = andLevelId
         self.barTitle = title
     }
     
-    override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {}
-    
     // MARK: States private implementation
     fileprivate func renderDataState(data: GameAreaViewModel) {
         text.text = data.text
         gameData = data.game
         pageControl.currentPage = data.currentGamePlaying
+        let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, totalInfo: gameData?.map{$0.title} ?? [])
+        collectionLayout.itemSize = cellSize
+        collectionLayout.minimumLineSpacing = 10
+        collectionLayout.minimumInteritemSpacing = 10
     }
     
     fileprivate func renderErrorState(message: String) {
@@ -93,7 +97,6 @@ extension GameAreaView {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OneTextGameCellCollectionViewCell.identifier, for: indexPath) as! OneTextGameCellCollectionViewCell
         cell.setData(text: gameData?[indexPath.item].title ?? "")
-        cell.maxWidth = collectionView.bounds.width - 20
         cell.isHidden = false
         if let kdCollectionView = collectionView as? KDDragAndDropCollectionView {
             if let draggingPathOfCellBeingDragged = kdCollectionView.draggingPathOfCellBeingDragged {
@@ -152,11 +155,8 @@ extension GameAreaView: KDDragAndDropCollectionViewDataSource {
 extension GameAreaView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        let totalCellWidth = collectionView.bounds.width //- 10
-//        let leftInset = (collectionView.frame.width - CGFloat(totalCellWidth))
-//        let rightInset = leftInset
         let totalHeight = collectionView.bounds.height
-        return UIEdgeInsets.init(top: (totalHeight/2) - 50, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets.init(top: (totalHeight/2) - 105, left: 0, bottom: 0, right: 0)
     }
 }
 

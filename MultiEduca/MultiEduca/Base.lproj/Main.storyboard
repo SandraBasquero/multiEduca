@@ -136,7 +136,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="on6-o4-X7M" customClass="KDDragAndDropCollectionView" customModule="KDDragAndDropCollectionViews">
                                 <rect key="frame" x="10" y="80.5" width="355" height="419"/>
                                 <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="25" id="DRc-ru-Eoz">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="15" id="DRc-ru-Eoz">
                                     <size key="itemSize" width="90" height="70"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -209,7 +209,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomButton" destination="n2L-sF-OLa" id="9Vk-Fl-rtw"/>
-                        <outlet property="collectionLayout" destination="DRc-ru-Eoz" id="jC8-Ki-MT0"/>
+                        <outlet property="collectionLayout" destination="DRc-ru-Eoz" id="Xkc-az-fiF"/>
                         <outlet property="pageControl" destination="z1h-TB-rJi" id="kMC-mf-ZOk"/>
                         <outlet property="playgroundCollectionView" destination="on6-o4-X7M" id="Q8Y-Tp-TwN"/>
                         <outlet property="text" destination="lmt-7G-mSs" id="HTD-7m-mRG"/>

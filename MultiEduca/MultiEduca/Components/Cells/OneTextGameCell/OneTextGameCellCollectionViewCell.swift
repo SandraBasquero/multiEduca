@@ -11,11 +11,6 @@ import UIKit
 class OneTextGameCellCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var text: UILabel!
-    @IBOutlet private var maxWidthConstraint: NSLayoutConstraint! {
-        didSet {
-            maxWidthConstraint.isActive = false
-        }
-    }
     
     static let identifier = "OneTextGameCellCollectionViewCell"
     
@@ -24,25 +19,18 @@ class OneTextGameCellCollectionViewCell: UICollectionViewCell {
         collectionView.register(UINib.init(nibName: "OneTextGameCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifier)
     }
     
-    var maxWidth: CGFloat? = nil {
-        didSet {
-            guard let maxWidth = maxWidth else {
-                return
-            }
-            maxWidthConstraint.isActive = true
-            maxWidthConstraint.constant = maxWidth
+   static func calculateCellSize(collectionViewWidth: CGFloat, totalInfo: [String]) -> CGSize {
+    //TOOD: calculate cell width also according to screen devices width.
+        var maxLenght = 0
+        totalInfo.forEach {
+            maxLenght = $0.count > maxLenght ? $0.count : maxLenght
         }
+        let cellWidth = maxLenght > 6 ? collectionViewWidth / 2 : collectionViewWidth / 3
+        return CGSize(width: cellWidth, height: 100)
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            contentView.leftAnchor.constraint(equalTo: leftAnchor),
-            contentView.rightAnchor.constraint(equalTo: rightAnchor),
-            contentView.topAnchor.constraint(equalTo: topAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.gray.cgColor
         layer.cornerRadius = 10
