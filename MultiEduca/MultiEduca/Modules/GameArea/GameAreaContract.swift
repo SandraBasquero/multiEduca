@@ -18,6 +18,7 @@ protocol GameAreaPresenterContract: PresenterContractBase {
     func backToHomeMenu()
     func getContent(gameId: String, levelId: String)
     func getTotalQuestions(gameId: String, levelId: String) -> Int
+    func updateCurrentPlayingGame()
     func backToLevelScreen()
 }
 
