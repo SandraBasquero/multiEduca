@@ -155,11 +155,12 @@
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2L-sF-OLa">
                                 <rect key="frame" x="100" y="580" width="175" height="40"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TKM-nH-k0f"/>
                                 </constraints>
                                 <state key="normal" title="Button">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -179,7 +180,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbj-xg-32y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbj-xg-32y">
                                         <rect key="frame" x="81.5" y="0.0" width="42" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -212,6 +213,8 @@
                         <outlet property="collectionLayout" destination="DRc-ru-Eoz" id="Xkc-az-fiF"/>
                         <outlet property="pageControl" destination="z1h-TB-rJi" id="kMC-mf-ZOk"/>
                         <outlet property="playgroundCollectionView" destination="on6-o4-X7M" id="Q8Y-Tp-TwN"/>
+                        <outlet property="pointsTitleLabel" destination="pPl-Iy-h2T" id="YNO-1e-ATt"/>
+                        <outlet property="pointsValueLabel" destination="vbj-xg-32y" id="XC8-Vl-wcZ"/>
                         <outlet property="text" destination="lmt-7G-mSs" id="HTD-7m-mRG"/>
                     </connections>
                 </viewController>

@@ -15,6 +15,8 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var playgroundCollectionView: KDDragAndDropCollectionView!
     @IBOutlet weak var text: UILabel!
+    @IBOutlet var pointsValueLabel: UILabel!
+    @IBOutlet var pointsTitleLabel: UILabel!
     @IBOutlet weak var bottomButton: UIButton!
     @IBOutlet weak var collectionLayout: UICollectionViewFlowLayout!
     
@@ -58,6 +60,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     fileprivate func renderDataState(data: GameAreaViewModel) {
         text.text = data.text
         gameData = data.game
+        pointsValueLabel.text = String(data.points)
         pageControl.currentPage = data.currentGamePlaying
         let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, totalInfo: gameData?.map{$0.title} ?? [])
         collectionLayout.itemSize = cellSize
@@ -83,7 +86,9 @@ extension GameAreaView: GameAreaViewContract {
         }
         OneTextGameCellCollectionViewCell.registerCellForCollectionView(playgroundCollectionView)
         self.dragAndDropManager = KDDragAndDropManager(canvas: self.view, collectionViews: [playgroundCollectionView])
-        
+        pointsTitleLabel.text = "game_points_label".localized
+        bottomButton.setTitle("game_button_next_page".localized, for: .normal)
+        bottomButton.setTitle("game_button_next_page".localized, for: .highlighted)
     }
     
     //Required by ViewContractBase protocol, but not used because of the states implementation
