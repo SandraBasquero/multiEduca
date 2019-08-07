@@ -31,8 +31,21 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     
     override func willAnimateRotation(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {}
     
-    override func viewWillLayoutSubviews() {
-       
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { context in
+            if UIApplication.shared.statusBarOrientation.isLandscape {
+                // activate landscape changes
+                self.playgroundCollectionView.backgroundColor = UIColor.orange
+                let totalHeight = self.playgroundCollectionView.bounds.height
+                self.collectionLayout.sectionInset = UIEdgeInsets(top: totalHeight, left: 0, bottom: 0, right: 0)
+            } else {
+                // activate portrait changes
+                self.playgroundCollectionView.backgroundColor = UIColor.blue
+                let totalHeight = self.playgroundCollectionView.bounds.height
+                self.collectionLayout.sectionInset = UIEdgeInsets(top: (totalHeight/2) - 105, left: 0, bottom: 0, right: 0)
+            }
+             self.collectionLayout.invalidateLayout()
+        })
     }
     
     func setGameId(_ gameId:String, andLevelId:String, title:String) {
@@ -70,6 +83,7 @@ extension GameAreaView: GameAreaViewContract {
         }
         OneTextGameCellCollectionViewCell.registerCellForCollectionView(playgroundCollectionView)
         self.dragAndDropManager = KDDragAndDropManager(canvas: self.view, collectionViews: [playgroundCollectionView])
+        
     }
     
     //Required by ViewContractBase protocol, but not used because of the states implementation
@@ -156,7 +170,7 @@ extension GameAreaView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         let totalHeight = collectionView.bounds.height
-        return UIEdgeInsets.init(top: (totalHeight/2) - 105, left: 0, bottom: 0, right: 0)
+        return UIEdgeInsets(top: (totalHeight/2) - 105, left: 0, bottom: 0, right: 0)
     }
 }
 
