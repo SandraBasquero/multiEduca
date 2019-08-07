@@ -53,8 +53,12 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     func getContent(gameId: String, levelId: String) {
         let content = interactor.getContentLevel(gameId: gameId, levelId: levelId)
         if content.count > 0  {
-            let viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
-            setState(.renderData(viewModel))
+            if currentPlayingGame < content.count {
+                let viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
+                setState(.renderData(viewModel))
+            } else {
+                // End of the current level game
+            }
         } else {
             setState(.error(messageError: "level_no_content_error_message".localized))
         }
@@ -63,6 +67,10 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     //Esto puede que sobre...
     func getTotalQuestions(gameId: String, levelId: String) -> Int {
         return interactor.getQuestionsLevelTotalNumber(gameId: gameId, levelId: levelId)
+    }
+    
+    func updateCurrentPlayingGame() {
+        currentPlayingGame += 1
     }
     
     func backToLevelScreen() {

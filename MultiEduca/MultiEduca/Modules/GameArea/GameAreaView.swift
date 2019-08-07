@@ -50,6 +50,11 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
         })
     }
     
+    @IBAction func bottomButtonAction(_ sender: Any) {
+        presenter.updateCurrentPlayingGame()
+        presenter.getContent(gameId: gameId!, levelId: levelId!)
+    }
+    
     func setGameId(_ gameId:String, andLevelId:String, title:String) {
         self.gameId = gameId
         self.levelId = andLevelId
@@ -62,6 +67,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
         gameData = data.game
         pointsValueLabel.text = String(data.points)
         pageControl.currentPage = data.currentGamePlaying
+        playgroundCollectionView.reloadData()
         let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, totalInfo: gameData?.map{$0.title} ?? [])
         collectionLayout.itemSize = cellSize
         collectionLayout.minimumLineSpacing = 10
