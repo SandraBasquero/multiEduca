@@ -32,4 +32,17 @@ extension GameAreaInteractor: GameAreaInteractorContract {
         }
         return levelContent
     }
+    
+    func getQuestionsLevelTotalNumber(gameId: String, levelId: String) -> Int {
+        var totalQuestions = 0
+        provider.getContentLevel(gameId: gameId, leveId: levelId) { response in
+            switch response {
+            case .data(let content):
+               totalQuestions = content.count
+            case .error:
+                totalQuestions = 0
+            }
+        }
+        return totalQuestions
+    }
 }

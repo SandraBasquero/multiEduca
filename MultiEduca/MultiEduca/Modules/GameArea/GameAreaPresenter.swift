@@ -8,16 +8,34 @@
 
 import Foundation
 
+enum GameState {
+    case renderData(_ data: GameAreaViewModel)
+    case error(messageError: String)
+    case loading
+}
+
 final class GameAreaPresenter {
     
-    let view: GameAreaViewContract
-    let router: GameAreaRouterContract
-    let interactor: GameAreaInteractorContract
+    fileprivate let view: GameAreaViewContract
+    fileprivate let router: GameAreaRouterContract
+    fileprivate let interactor: GameAreaInteractorContract
+    fileprivate var currentPlayingGame = 0
+    fileprivate var currentState: GameState {
+        didSet {
+            view.renderState(currentState)
+        }
+    }
     
     init(view: GameAreaViewContract, router: GameAreaRouterContract, interactor: GameAreaInteractorContract) {
         self.view = view
         self.router = router
         self.interactor = interactor
+        currentState = .loading
+    }
+    
+    // MARK: Private functions
+    fileprivate func setState(_ state: GameState) {
+        currentState = state
     }
 }
 
@@ -34,10 +52,20 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     
     func getContent(gameId: String, levelId: String) {
         let content = interactor.getContentLevel(gameId: gameId, levelId: levelId)
-        if content.count > 0 {
-            print(content)
+        if content.count > 0  {
+            let viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
+            setState(.renderData(viewModel))
         } else {
-            print("Nothing")
+            setState(.error(messageError: "level_no_content_error_message".localized))
         }
+    }
+    
+    //Esto puede que sobre...
+    func getTotalQuestions(gameId: String, levelId: String) -> Int {
+        return interactor.getQuestionsLevelTotalNumber(gameId: gameId, levelId: levelId)
+    }
+    
+    func backToLevelScreen() {
+        router.backToLevels()
     }
 }
