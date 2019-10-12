@@ -12,6 +12,7 @@ enum GameState {
     case renderData(_ data: GameAreaViewModel)
     case error(messageError: String)
     case loading
+    case correctAnswer
 }
 
 final class GameAreaPresenter {
@@ -33,13 +34,23 @@ final class GameAreaPresenter {
         currentState = .loading
     }
     
-    // MARK: Private functions
+    // MARK: - Private functions
     fileprivate func setState(_ state: GameState) {
         currentState = state
     }
+    
+    fileprivate func wordsValidator(answer: [OneTextGameCellViewModel]) -> Bool {
+        let sortedGame = answer.sorted { $0.index < $1.index }
+        return  answer == sortedGame
+    }
+    
+    fileprivate func numbersValidator(answer: [OneTextGameCellViewModel]) -> Bool {
+        //TODO: Think now about a brilliant way to validate numbers...
+        return true
+    }
 }
 
-
+    // MARK: - GameAreaPresenterContract
 extension GameAreaPresenter: GameAreaPresenterContract {
 
     func start() {
@@ -50,11 +61,12 @@ extension GameAreaPresenter: GameAreaPresenterContract {
         router.backToHomeMenu()
     }
     
-    func getContent(gameId: String, levelId: String) {
+    func getNewContentShuffled(gameId: String, levelId: String) {
         let content = interactor.getContentLevel(gameId: gameId, levelId: levelId)
         if content.count > 0  {
             if currentPlayingGame < content.count {
-                let viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
+                var viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
+                viewModel.game.shuffle()
                 setState(.renderData(viewModel))
             } else {
                 // End of the current level game
@@ -75,5 +87,29 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     
     func backToLevelScreen() {
         router.backToLevels()
+    }
+    
+  func answerValidator(gameCells: [OneTextGameCellViewModel]) {
+        var currentData: GameAreaViewModel? {
+            switch self.currentState {
+            case let .renderData(data):
+                return data
+            default:
+                return nil
+            }
+        }
+        var isValid = false
+        print(currentData?.gameFamilyType)
+        switch currentData?.gameFamilyType {
+            case .words:
+                isValid = wordsValidator(answer: gameCells)
+            case .numbers:
+                isValid = numbersValidator(answer: gameCells)
+            case .none:
+                isValid = false
+        }
+        if isValid {
+            setState(.correctAnswer)
+        }
     }
 }
