@@ -16,10 +16,11 @@ protocol GameAreaViewContract:ViewContractBase {
 
 protocol GameAreaPresenterContract: PresenterContractBase {
     func backToHomeMenu()
-    func getContent(gameId: String, levelId: String)
+    func getNewContentShuffled(gameId: String, levelId: String)
     func getTotalQuestions(gameId: String, levelId: String) -> Int
     func updateCurrentPlayingGame()
     func backToLevelScreen()
+    func answerValidator(gameCells: [OneTextGameCellViewModel])
 }
 
 protocol GameAreaInteractorContract {

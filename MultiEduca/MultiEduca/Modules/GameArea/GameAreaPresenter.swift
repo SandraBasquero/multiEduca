@@ -12,6 +12,7 @@ enum GameState {
     case renderData(_ data: GameAreaViewModel)
     case error(messageError: String)
     case loading
+    case correctAnswer
 }
 
 final class GameAreaPresenter {
@@ -33,13 +34,50 @@ final class GameAreaPresenter {
         currentState = .loading
     }
     
-    // MARK: Private functions
+    // MARK: - Private functions
     fileprivate func setState(_ state: GameState) {
         currentState = state
     }
+    
+    fileprivate func wordsValidator(answer: [OneTextGameCellViewModel]) -> Bool {
+        let sortedGame = answer.sorted { $0.index < $1.index }
+        return  answer == sortedGame
+    }
+    
+    fileprivate func numbersValidator(answer: [OneTextGameCellViewModel]) -> Bool {
+        let sortedGame = answer.sorted { $0.index < $1.index }
+        let result = sortedGame.last?.title ?? ""
+        let operation = answer.prefix(3)
+        var validate = true
+         operation.forEach {
+             if $0.title == "=" || $0.title == result {
+                 validate = false
+             }
+         }
+         if !validate { return false }
+         let signOperation = operation[1].title
+         if signOperation == "X" || signOperation == "-" || signOperation == "+" || signOperation == "/" {
+             var mathExpression = ""
+             operation.forEach {
+                mathExpression = mathExpression + $0.title + " "
+             }
+             if signOperation == "X" {
+                 mathExpression = mathExpression.replacingOccurrences(of: "X", with: "*")
+             }
+             let math = NSExpression(format: mathExpression)
+             let mathValue = math.expressionValue(with: nil, context: nil) as? Int
+             if result == String(mathValue!) {
+                 return answer.last?.title == result
+             } else {
+                 return false
+             }
+         } else {
+             return false
+         }
+    }
 }
 
-
+    // MARK: - GameAreaPresenterContract
 extension GameAreaPresenter: GameAreaPresenterContract {
 
     func start() {
@@ -50,11 +88,12 @@ extension GameAreaPresenter: GameAreaPresenterContract {
         router.backToHomeMenu()
     }
     
-    func getContent(gameId: String, levelId: String) {
+    func getNewContentShuffled(gameId: String, levelId: String) {
         let content = interactor.getContentLevel(gameId: gameId, levelId: levelId)
         if content.count > 0  {
             if currentPlayingGame < content.count {
-                let viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
+                var viewModel = GameAreaViewModelsMapper.contentConverter(content: content[currentPlayingGame], currentPageGame: currentPlayingGame)
+                viewModel.game.shuffle()
                 setState(.renderData(viewModel))
             } else {
                 // End of the current level game
@@ -75,5 +114,28 @@ extension GameAreaPresenter: GameAreaPresenterContract {
     
     func backToLevelScreen() {
         router.backToLevels()
+    }
+    
+  func answerValidator(gameCells: [OneTextGameCellViewModel]) {
+        var currentData: GameAreaViewModel? {
+            switch self.currentState {
+            case let .renderData(data):
+                return data
+            default:
+                return nil
+            }
+        }
+        var isValid = false
+        switch currentData?.gameFamilyType {
+            case .words:
+                isValid = wordsValidator(answer: gameCells)
+            case .numbers:
+                isValid = numbersValidator(answer: gameCells)
+            case .none:
+                isValid = false
+        }
+        if isValid {
+            setState(.correctAnswer)
+        }
     }
 }

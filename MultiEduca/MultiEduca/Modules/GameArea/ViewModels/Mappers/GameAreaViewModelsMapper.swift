@@ -14,10 +14,12 @@ final class GameAreaViewModelsMapper {
         return GameAreaViewModel(text: content.description ?? "",
                                  game: answerToOneTextGameCellViewModel(content.answer ?? ""),
                                  currentGamePlaying: currentPageGame,
-                                 points: content.points ?? 0)
+                                 points: content.points ?? 0,
+                                 gameFamilyType: getFamilyTypeGame(answer: content.answer ?? ""))
     }
     
-    static func answerToOneTextGameCellViewModel(_ text: String) -> [OneTextGameCellViewModel] {
+    // MARK: - Private functions
+    private static func answerToOneTextGameCellViewModel(_ text: String) -> [OneTextGameCellViewModel] {
         let characters = text.components(separatedBy: " ")
         var cells = [OneTextGameCellViewModel]()
         for i in 0...characters.count - 1 {
@@ -26,4 +28,11 @@ final class GameAreaViewModelsMapper {
         return cells
     }
     
+    private static func getFamilyTypeGame(answer: String) -> GameType {
+        if answer.contains("=") {
+            return .numbers
+        } else {
+            return .words
+        }
+    }
 }

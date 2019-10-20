@@ -52,7 +52,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     
     @IBAction func bottomButtonAction(_ sender: Any) {
         presenter.updateCurrentPlayingGame()
-        presenter.getContent(gameId: gameId!, levelId: levelId!)
+        presenter.getNewContentShuffled(gameId: gameId!, levelId: levelId!)
     }
     
     func setGameId(_ gameId:String, andLevelId:String, title:String) {
@@ -68,6 +68,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
         pointsValueLabel.text = String(data.points)
         pageControl.currentPage = data.currentGamePlaying
         playgroundCollectionView.reloadData()
+        bottomButton.isHidden = true
         let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, totalInfo: gameData?.map{$0.title} ?? [])
         collectionLayout.itemSize = cellSize
         collectionLayout.minimumLineSpacing = 10
@@ -79,6 +80,10 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
             self.presenter.backToLevelScreen()
         }
     }
+    
+    fileprivate func renderCorrectAnswerState() {
+        bottomButton.isHidden = false
+    }
 }
 
 // MARK: - GameAreaViewContract
@@ -88,7 +93,7 @@ extension GameAreaView: GameAreaViewContract {
         showHomeButtonOnNavigationBar(true)
         if let game = gameId, let level = levelId {
             pageControl.numberOfPages = presenter.getTotalQuestions(gameId: game, levelId: level)
-            presenter.getContent(gameId: game, levelId: level)
+            presenter.getNewContentShuffled(gameId: game, levelId: level)
         }
         OneTextGameCellCollectionViewCell.registerCellForCollectionView(playgroundCollectionView)
         self.dragAndDropManager = KDDragAndDropManager(canvas: self.view, collectionViews: [playgroundCollectionView])
@@ -108,6 +113,8 @@ extension GameAreaView: GameAreaViewContract {
             renderErrorState(message: message)
         case .loading:
             print("Loading...")
+        case .correctAnswer:
+            renderCorrectAnswerState()
         }
     }
 }
@@ -159,7 +166,8 @@ extension GameAreaView: KDDragAndDropCollectionViewDataSource {
         let fromData: OneTextGameCellViewModel = (gameData?[from.item])!
         gameData?.remove(at: from.item)
         gameData?.insert(fromData, at: to.item)
-        print(gameData) //Check sort here!
+        guard let gameData = gameData else { return }
+        presenter.answerValidator(gameCells: gameData)
     }
 
     func collectionView(_ collectionView: UICollectionView, dataItemForIndexPath indexPath: IndexPath) -> AnyObject {
@@ -192,3 +200,7 @@ extension GameAreaView: BaseViewControllerDelegate {
         presenter.backToHomeMenu()
     }
 }
+
+
+
+

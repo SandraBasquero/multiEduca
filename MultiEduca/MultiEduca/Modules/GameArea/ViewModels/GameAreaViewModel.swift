@@ -10,7 +10,13 @@ import Foundation
 
 struct GameAreaViewModel {
     let text: String
-    let game: [OneTextGameCellViewModel]
+    var game: [OneTextGameCellViewModel]
     let currentGamePlaying: Int
     let points: Int
+    let gameFamilyType: GameType
+}
+
+enum GameType {
+    case words
+    case numbers
 }
