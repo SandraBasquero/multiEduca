@@ -100,6 +100,7 @@ extension GameAreaView: GameAreaViewContract {
         pointsTitleLabel.text = "game_points_label".localized
         bottomButton.setTitle("game_button_next_page".localized, for: .normal)
         bottomButton.setTitle("game_button_next_page".localized, for: .highlighted)
+        text.font = UIFont(name: Constants.Styles.secondaryFont, size: 20)
     }
     
     //Required by ViewContractBase protocol, but not used because of the states implementation

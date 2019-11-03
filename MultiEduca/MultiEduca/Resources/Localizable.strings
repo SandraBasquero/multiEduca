@@ -14,5 +14,5 @@
 "level_no_level_error_message"              = "Este juego no tiene contenido por ahora :(";
 "level_no_content_error_message"            = "Este nivel no tiene contenido por ahora :(";
 
-"game_points_label"                         = "Puntos";
+"game_points_label"                         = "Puntos:";
 "game_button_next_page"                     = "¡Hecho!";

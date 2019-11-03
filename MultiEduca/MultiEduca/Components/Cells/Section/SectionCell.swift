@@ -16,7 +16,6 @@ class SectionCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        name?.font = UIFont(name: Constants.Styles.secondaryFont, size: 18)
     }
-
 }

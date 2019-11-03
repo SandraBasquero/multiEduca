@@ -35,7 +35,7 @@ class OneTextGameCellCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.borderWidth = 0.5
-        layer.borderColor = UIColor.gray.cgColor
+        layer.borderColor = UIColor.white.cgColor
         layer.cornerRadius = 10
     }
     

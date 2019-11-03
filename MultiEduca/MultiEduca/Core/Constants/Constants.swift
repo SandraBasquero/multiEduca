@@ -13,6 +13,7 @@ struct Constants {
     
     
     struct Styles {
-        static let primaryFont = "DINAlternate-Bold"
+        static let primaryFont = "ChalkboardSE-Bold"
+        static let secondaryFont = "ChalkboardSE-Regular"
     }
 }
