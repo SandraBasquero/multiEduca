@@ -36,6 +36,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { context in
             if UIApplication.shared.statusBarOrientation.isLandscape {
+                //TODO
                 // activate landscape changes
                 self.playgroundCollectionView.backgroundColor = UIColor.orange
                 let totalHeight = self.playgroundCollectionView.bounds.height
@@ -69,10 +70,10 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
         pageControl.currentPage = data.currentGamePlaying
         playgroundCollectionView.reloadData()
         bottomButton.isHidden = true
-        let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, totalInfo: gameData?.map{$0.title} ?? [])
-        collectionLayout.itemSize = cellSize
         collectionLayout.minimumLineSpacing = 10
         collectionLayout.minimumInteritemSpacing = 10
+        let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, cellsMinSpacing: collectionLayout.minimumLineSpacing, totalInfo: gameData?.map{$0.title} ?? [])
+        collectionLayout.itemSize = cellSize
     }
     
     fileprivate func renderErrorState(message: String) {

@@ -19,17 +19,13 @@ class OneTextGameCellCollectionViewCell: UICollectionViewCell {
         collectionView.register(UINib.init(nibName: "OneTextGameCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: identifier)
     }
     
-    static func calculateCellSize(collectionViewWidth: CGFloat, totalInfo: [String]) -> CGSize {
+    static func calculateCellSize(collectionViewWidth: CGFloat, cellsMinSpacing: CGFloat, totalInfo: [String]) -> CGSize {
         var maxLenght = 0
         totalInfo.forEach {
             maxLenght = $0.count > maxLenght ? $0.count : maxLenght
         }
-        if  UIScreen.main.bounds.width >= 414.0 {
-            let cellWidth = maxLenght > 6 ? collectionViewWidth / 2 : collectionViewWidth / 3
-            return CGSize(width: cellWidth, height: 100)
-        } else {
-            return CGSize(width: 110, height: 100)
-        }
+        let cellWidth = maxLenght > 6 ? collectionViewWidth / 2 : collectionViewWidth / 3
+        return CGSize(width: cellWidth - cellsMinSpacing, height: 100)
     }
 
     override func awakeFromNib() {
