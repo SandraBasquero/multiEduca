@@ -36,6 +36,7 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: { context in
             if UIApplication.shared.statusBarOrientation.isLandscape {
+                //TODO
                 // activate landscape changes
                 self.playgroundCollectionView.backgroundColor = UIColor.orange
                 let totalHeight = self.playgroundCollectionView.bounds.height
@@ -69,10 +70,10 @@ class GameAreaView: BaseViewController<GameAreaPresenter> {
         pageControl.currentPage = data.currentGamePlaying
         playgroundCollectionView.reloadData()
         bottomButton.isHidden = true
-        let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, totalInfo: gameData?.map{$0.title} ?? [])
-        collectionLayout.itemSize = cellSize
         collectionLayout.minimumLineSpacing = 10
         collectionLayout.minimumInteritemSpacing = 10
+        let cellSize = OneTextGameCellCollectionViewCell.calculateCellSize(collectionViewWidth: playgroundCollectionView.frame.width, cellsMinSpacing: collectionLayout.minimumLineSpacing, totalInfo: gameData?.map{$0.title} ?? [])
+        collectionLayout.itemSize = cellSize
     }
     
     fileprivate func renderErrorState(message: String) {
@@ -99,7 +100,12 @@ extension GameAreaView: GameAreaViewContract {
         self.dragAndDropManager = KDDragAndDropManager(canvas: self.view, collectionViews: [playgroundCollectionView])
         pointsTitleLabel.text = "game_points_label".localized
         bottomButton.setTitle("game_button_next_page".localized, for: .normal)
-        bottomButton.setTitle("game_button_next_page".localized, for: .highlighted)
+        bottomButton.titleLabel?.font =  UIFont(name: Constants.Styles.primaryFont, size: 20)
+        bottomButton.setTitleColor(UIColor.darkGray, for: .normal)
+        bottomButton.layer.borderWidth = 0.5
+        bottomButton.layer.borderColor = UIColor.darkGray.cgColor
+        bottomButton.layer.cornerRadius = 10
+        text.font = UIFont(name: Constants.Styles.secondaryFont, size: 20)
     }
     
     //Required by ViewContractBase protocol, but not used because of the states implementation
