@@ -100,9 +100,8 @@ extension GameAreaView: GameAreaViewContract {
         self.dragAndDropManager = KDDragAndDropManager(canvas: self.view, collectionViews: [playgroundCollectionView])
         pointsTitleLabel.text = "game_points_label".localized
         bottomButton.setTitle("game_button_next_page".localized, for: .normal)
-        bottomButton.setTitle("game_button_next_page".localized, for: .highlighted)
         bottomButton.titleLabel?.font =  UIFont(name: Constants.Styles.primaryFont, size: 20)
-        bottomButton.titleLabel?.textColor = UIColor.darkGray
+        bottomButton.setTitleColor(UIColor.darkGray, for: .normal)
         bottomButton.layer.borderWidth = 0.5
         bottomButton.layer.borderColor = UIColor.darkGray.cgColor
         bottomButton.layer.cornerRadius = 10
