@@ -101,6 +101,11 @@ extension GameAreaView: GameAreaViewContract {
         pointsTitleLabel.text = "game_points_label".localized
         bottomButton.setTitle("game_button_next_page".localized, for: .normal)
         bottomButton.setTitle("game_button_next_page".localized, for: .highlighted)
+        bottomButton.titleLabel?.font =  UIFont(name: Constants.Styles.primaryFont, size: 20)
+        bottomButton.titleLabel?.textColor = UIColor.darkGray
+        bottomButton.layer.borderWidth = 0.5
+        bottomButton.layer.borderColor = UIColor.darkGray.cgColor
+        bottomButton.layer.cornerRadius = 10
         text.font = UIFont(name: Constants.Styles.secondaryFont, size: 20)
     }
     

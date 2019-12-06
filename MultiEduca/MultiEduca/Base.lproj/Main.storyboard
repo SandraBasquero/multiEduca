@@ -132,7 +132,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="on6-o4-X7M" customClass="KDDragAndDropCollectionView" customModule="KDDragAndDropCollectionViews">
-                                <rect key="frame" x="10" y="60.5" width="355" height="434"/>
+                                <rect key="frame" x="10" y="60.5" width="355" height="424"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="15" id="DRc-ru-Eoz">
                                     <size key="itemSize" width="90" height="70"/>
@@ -152,10 +152,10 @@
                                 <color key="currentPageIndicatorTintColor" name="SelectedFirstColor"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2L-sF-OLa">
-                                <rect key="frame" x="100" y="580" width="175" height="40"/>
-                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="100" y="570" width="175" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="TKM-nH-k0f"/>
+                                    <constraint firstAttribute="height" constant="50" id="TKM-nH-k0f"/>
                                 </constraints>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -173,7 +173,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="VsZ-Vr-qWm">
-                                <rect key="frame" x="238" y="534.5" width="127" height="25.5"/>
+                                <rect key="frame" x="238" y="524.5" width="127" height="25.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Puntos: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPl-Iy-h2T">
                                         <rect key="frame" x="0.0" y="0.0" width="64.5" height="25.5"/>
